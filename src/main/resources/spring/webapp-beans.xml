@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<context:spring-configured />
+	<context:component-scan base-package="org.sdmxsource" />
+	<context:component-scan base-package="demo.sdmxsource" />
+
+	<bean id="readableDataLocationFactory" class="org.sdmxsource.util.factory.SdmxSourceReadableDataLocationFactory" />
+	<bean id="writeableDataLocationFactory" class="org.sdmxsource.util.factory.SdmxSourceWriteableDataLocationFactory" />
+
+
+	<context:property-placeholder location="classpath:webapp.properties"/>
+
+	<!-- REST DATA QUERY MANAGER -->
+	<bean id="restDataQueryManager"
+		class="org.sdmxsource.sdmx.dataparser.rest.RestDataQueryManagerImpl">
+		<property name="dataRetrievalWithWriter" ref="${data.retrieval}" />
+		<property name="beanRetrievalManager" ref="${structure.retrieval}" />
+	</bean>
+
+	<!-- REST STRUCTURE QUERY MANAGER -->
+	<bean id="restStructureQueryManager"
+		class="org.sdmxsource.sdmx.structureparser.manager.rest.RestStructureQueryManagerImpl">
+		<property name="beanRetrievalManager" ref="${structure.retrieval}" />
+	</bean>
+
+	<!-- USED WHEN STUBS ARE REQUESTED FROM STRUCTURE SERVICE -->
+	<bean id="serviceRetrievalManager" class="org.sdmxsource.sdmx.structureretrieval.manager.DefaultServiceRetrievalManager">
+		<property name="baseUrl" value="http://localhost:8080/DemoWebApp/ws/rest" />
+	</bean>
+
+</beans>
+
+
+

@@ -118,6 +118,14 @@
 			<groupId>org.sdmxsource</groupId>
 			<artifactId>SdmxFileQueryProcessor</artifactId>
 		</dependency>
+		
+		<!-- Jena -->
+        <dependency>
+            <groupId>org.apache.jena</groupId>
+            <artifactId>apache-jena-libs</artifactId>
+            <type>pom</type>
+            <version>2.10.1</version>
+        </dependency>
 
 		<!-- UNIT TESTING -->
 		<dependency>

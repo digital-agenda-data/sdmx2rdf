@@ -1,0 +1,308 @@
+<rdf:RDF xmlns:adms="http://www.w3.org/ns/adms#" xmlns:atold="http://publications.europa.eu/resource/authority/file-type/" xmlns:dad-class="http://semantic.digital-agenda-data.eu/def/class/" xmlns:dad-codelist="http://semantic.digital-agenda-data.eu/def/codelist/" xmlns:dad-prop="http://semantic.digital-agenda-data.eu/def/property/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:eurostat-dic="http://eurostat.linked-statistics.org/dic/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:intervals="http://reference.data.gov.uk/def/intervals/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:qb="http://purl.org/linked-data/cube#" xmlns:rad="http://www.w3.org/ns/radion#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:sdmx="http://purl.org/linked-data/sdmx#" xmlns:sdmx-attribute="http://purl.org/linked-data/sdmx/2009/attribute#" xmlns:sdmx-code="http://purl.org/linked-data/sdmx/2009/code#" xmlns:sdmx-concept="http://purl.org/linked-data/sdmx/2009/concept#" xmlns:sdmx-dimension="http://purl.org/linked-data/sdmx/2009/dimension#" xmlns:sdmx-measure="http://purl.org/linked-data/sdmx/2009/measure#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+    <rdf:Description rdf:about="http://semantic.digital-agenda-data.eu/codelist/unit-measure/pc_ind_iu3">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdf:type rdf:resource="http://semantic.digital-agenda-data.eu/def/class/UnitMeasure"/>
+        <skos:topConceptOf rdf:resource="http://semantic.digital-agenda-data.eu/codelist/unit-measure"/>
+        <skos:prefLabel>Percentage of individuals who used Internet in the last 3 months</skos:prefLabel>
+        <skos:notation>pc_ind_iu3</skos:notation>
+        <skos:altLabel>% ind iu3</skos:altLabel>
+        <skos:definition>Percentage of individuals who used Internet in the last 3 months</skos:definition>
+        <rdfs:seeAlso rdf:resource="http://eurostat.linked-statistics.org/dic/unit#PC_IND_IU3"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://semantic.digital-agenda-data.eu/codelist/unit-measure/pc_ind">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdf:type rdf:resource="http://semantic.digital-agenda-data.eu/def/class/UnitMeasure"/>
+        <skos:topConceptOf rdf:resource="http://semantic.digital-agenda-data.eu/codelist/unit-measure"/>
+        <skos:prefLabel>Percentage of individuals</skos:prefLabel>
+        <skos:notation>pc_ind</skos:notation>
+        <skos:altLabel>% ind</skos:altLabel>
+        <skos:definition>Percentage of individuals</skos:definition>
+        <rdfs:seeAlso rdf:resource="http://eurostat.linked-statistics.org/dic/unit#PC_IND"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://semantic.digital-agenda-data.eu/codelist/unit-measure/pc_revenue">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdf:type rdf:resource="http://semantic.digital-agenda-data.eu/def/class/UnitMeasure"/>
+        <skos:topConceptOf rdf:resource="http://semantic.digital-agenda-data.eu/codelist/unit-measure"/>
+        <skos:prefLabel>Percentage of revenue</skos:prefLabel>
+        <skos:notation>pc_revenue</skos:notation>
+        <skos:altLabel>% revenue</skos:altLabel>
+        <skos:definition>Percentage of revenue</skos:definition>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://semantic.digital-agenda-data.eu/codelist/unit-measure/pc_ent">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdf:type rdf:resource="http://semantic.digital-agenda-data.eu/def/class/UnitMeasure"/>
+        <skos:topConceptOf rdf:resource="http://semantic.digital-agenda-data.eu/codelist/unit-measure"/>
+        <skos:prefLabel>Percentage of enterprises</skos:prefLabel>
+        <skos:notation>pc_ent</skos:notation>
+        <skos:altLabel>% ent</skos:altLabel>
+        <skos:definition>Percentage of enterprises</skos:definition>
+        <rdfs:seeAlso rdf:resource="http://eurostat.linked-statistics.org/dic/unit#PC_ENT"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://semantic.digital-agenda-data.eu/codelist/unit-measure/pc_turn">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdf:type rdf:resource="http://semantic.digital-agenda-data.eu/def/class/UnitMeasure"/>
+        <skos:topConceptOf rdf:resource="http://semantic.digital-agenda-data.eu/codelist/unit-measure"/>
+        <skos:prefLabel>Percentage of turnover</skos:prefLabel>
+        <skos:notation>pc_turn</skos:notation>
+        <skos:altLabel>% turn</skos:altLabel>
+        <skos:definition>Percentage of turnover</skos:definition>
+        <rdfs:seeAlso rdf:resource="http://eurostat.linked-statistics.org/dic/unit#PC_TURN"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://semantic.digital-agenda-data.eu/codelist/unit-measure/pc_pub_serv_for_ent">
+        <skos:definition>Percentage  of public services for enterprises</skos:definition>
+        <skos:altLabel>% pub serv for ent</skos:altLabel>
+        <skos:notation>pc_pub_serv_for_ent</skos:notation>
+        <skos:prefLabel>Percentage  of public services for enterprises</skos:prefLabel>
+        <skos:topConceptOf rdf:resource="http://semantic.digital-agenda-data.eu/codelist/unit-measure"/>
+        <rdf:type rdf:resource="http://semantic.digital-agenda-data.eu/def/class/UnitMeasure"/>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://semantic.digital-agenda-data.eu/codelist/unit-measure/pc_subs">
+        <skos:definition>Percentage of subscribers</skos:definition>
+        <skos:altLabel>% subs</skos:altLabel>
+        <skos:notation>pc_subs</skos:notation>
+        <skos:prefLabel>Percentage of subscribers</skos:prefLabel>
+        <skos:topConceptOf rdf:resource="http://semantic.digital-agenda-data.eu/codelist/unit-measure"/>
+        <rdf:type rdf:resource="http://semantic.digital-agenda-data.eu/def/class/UnitMeasure"/>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://semantic.digital-agenda-data.eu/codelist/unit-measure/pc_lines">
+        <skos:definition>Percentage of fixed broadband lines</skos:definition>
+        <skos:altLabel>% lines</skos:altLabel>
+        <skos:notation>pc_lines</skos:notation>
+        <skos:prefLabel>Percentage of fixed broadband lines</skos:prefLabel>
+        <skos:topConceptOf rdf:resource="http://semantic.digital-agenda-data.eu/codelist/unit-measure"/>
+        <rdf:type rdf:resource="http://semantic.digital-agenda-data.eu/def/class/UnitMeasure"/>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://semantic.digital-agenda-data.eu/codelist/unit-measure/pc_total_cost">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdf:type rdf:resource="http://semantic.digital-agenda-data.eu/def/class/UnitMeasure"/>
+        <skos:topConceptOf rdf:resource="http://semantic.digital-agenda-data.eu/codelist/unit-measure"/>
+        <skos:prefLabel>Percentage of total cost</skos:prefLabel>
+        <skos:notation>pc_total_cost</skos:notation>
+        <skos:altLabel>% total cost</skos:altLabel>
+        <skos:definition>Percentage of total cost</skos:definition>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://semantic.digital-agenda-data.eu/codelist/unit-measure/pc_rural_pop">
+        <skos:definition>Percentage of rural population</skos:definition>
+        <skos:altLabel>% rural pop</skos:altLabel>
+        <skos:notation>pc_rural_pop</skos:notation>
+        <skos:prefLabel>Percentage of rural population</skos:prefLabel>
+        <skos:topConceptOf rdf:resource="http://semantic.digital-agenda-data.eu/codelist/unit-measure"/>
+        <rdf:type rdf:resource="http://semantic.digital-agenda-data.eu/def/class/UnitMeasure"/>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://semantic.digital-agenda-data.eu/codelist/unit-measure/subs_per_100_pop">
+        <skos:definition>Number of subscribers per 100 people</skos:definition>
+        <skos:altLabel>subs/100 pop</skos:altLabel>
+        <skos:notation>subs_per_100_pop</skos:notation>
+        <skos:prefLabel>Number of subscribers per 100 people</skos:prefLabel>
+        <skos:topConceptOf rdf:resource="http://semantic.digital-agenda-data.eu/codelist/unit-measure"/>
+        <rdf:type rdf:resource="http://semantic.digital-agenda-data.eu/def/class/UnitMeasure"/>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://semantic.digital-agenda-data.eu/codelist/unit-measure/lines_per_100_pop">
+        <skos:definition>Lines per 100 people</skos:definition>
+        <skos:altLabel>lines/100 pop</skos:altLabel>
+        <skos:notation>lines_per_100_pop</skos:notation>
+        <skos:prefLabel>Lines per 100 people</skos:prefLabel>
+        <skos:topConceptOf rdf:resource="http://semantic.digital-agenda-data.eu/codelist/unit-measure"/>
+        <rdf:type rdf:resource="http://semantic.digital-agenda-data.eu/def/class/UnitMeasure"/>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://semantic.digital-agenda-data.eu/codelist/unit-measure/n">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdf:type rdf:resource="http://semantic.digital-agenda-data.eu/def/class/UnitMeasure"/>
+        <skos:topConceptOf rdf:resource="http://semantic.digital-agenda-data.eu/codelist/unit-measure"/>
+        <skos:prefLabel>Euro</skos:prefLabel>
+        <skos:notation>n</skos:notation>
+        <skos:altLabel>euro</skos:altLabel>
+        <skos:definition>Euro</skos:definition>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://semantic.digital-agenda-data.eu/codelist/unit-measure/million_euro">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdf:type rdf:resource="http://semantic.digital-agenda-data.eu/def/class/UnitMeasure"/>
+        <skos:topConceptOf rdf:resource="http://semantic.digital-agenda-data.eu/codelist/unit-measure"/>
+        <skos:prefLabel>Million Euro</skos:prefLabel>
+        <skos:notation>million_euro</skos:notation>
+        <skos:altLabel>million euro</skos:altLabel>
+        <skos:definition>Million Euro</skos:definition>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://semantic.digital-agenda-data.eu/codelist/unit-measure/pc_websites">
+        <skos:definition>Percentage of websites</skos:definition>
+        <skos:altLabel>% websites</skos:altLabel>
+        <skos:notation>pc_websites</skos:notation>
+        <skos:prefLabel>Percentage of websites</skos:prefLabel>
+        <skos:topConceptOf rdf:resource="http://semantic.digital-agenda-data.eu/codelist/unit-measure"/>
+        <rdf:type rdf:resource="http://semantic.digital-agenda-data.eu/def/class/UnitMeasure"/>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://semantic.digital-agenda-data.eu/codelist/unit-measure/pc_ec_funding">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdf:type rdf:resource="http://semantic.digital-agenda-data.eu/def/class/UnitMeasure"/>
+        <skos:topConceptOf rdf:resource="http://semantic.digital-agenda-data.eu/codelist/unit-measure"/>
+        <skos:prefLabel>Percentage of EC funding</skos:prefLabel>
+        <skos:notation>pc_ec_funding</skos:notation>
+        <skos:altLabel>% EC funding</skos:altLabel>
+        <skos:definition>Percentage of EC funding</skos:definition>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://semantic.digital-agenda-data.eu/codelist/unit-measure/nbr_organisations">
+        <skos:definition>Number of organizations</skos:definition>
+        <skos:altLabel>nb organisations</skos:altLabel>
+        <skos:notation>nbr_organisations</skos:notation>
+        <skos:prefLabel>Number of organizations</skos:prefLabel>
+        <skos:topConceptOf rdf:resource="http://semantic.digital-agenda-data.eu/codelist/unit-measure"/>
+        <rdf:type rdf:resource="http://semantic.digital-agenda-data.eu/def/class/UnitMeasure"/>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://semantic.digital-agenda-data.eu/codelist/unit-measure/nbr_subs">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdf:type rdf:resource="http://semantic.digital-agenda-data.eu/def/class/UnitMeasure"/>
+        <skos:topConceptOf rdf:resource="http://semantic.digital-agenda-data.eu/codelist/unit-measure"/>
+        <skos:prefLabel>Number of subscribers</skos:prefLabel>
+        <skos:notation>nbr_subs</skos:notation>
+        <skos:altLabel>nbr subs</skos:altLabel>
+        <skos:definition>Number of subscribers</skos:definition>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://semantic.digital-agenda-data.eu/codelist/unit-measure">
+        <skos:prefLabel>Code list for units of measure used by Digital Agenda Scoreboard</skos:prefLabel>
+        <skos:hasTopConcept rdf:resource="http://semantic.digital-agenda-data.eu/codelist/unit-measure/pc_ent_ade"/>
+        <skos:notation>CL_UNIT_MEASURE</skos:notation>
+        <skos:hasTopConcept rdf:resource="http://semantic.digital-agenda-data.eu/codelist/unit-measure/pc_rural_pop"/>
+        <skos:hasTopConcept rdf:resource="http://semantic.digital-agenda-data.eu/codelist/unit-measure/pc_subs"/>
+        <skos:hasTopConcept rdf:resource="http://semantic.digital-agenda-data.eu/codelist/unit-measure/pc_websites"/>
+        <skos:hasTopConcept rdf:resource="http://semantic.digital-agenda-data.eu/codelist/unit-measure/million_euro"/>
+        <skos:hasTopConcept rdf:resource="http://semantic.digital-agenda-data.eu/codelist/unit-measure/pc_revenue"/>
+        <skos:hasTopConcept rdf:resource="http://semantic.digital-agenda-data.eu/codelist/unit-measure/pc_ec_funding"/>
+        <skos:hasTopConcept rdf:resource="http://semantic.digital-agenda-data.eu/codelist/unit-measure/pc_organisations"/>
+        <skos:hasTopConcept rdf:resource="http://semantic.digital-agenda-data.eu/codelist/unit-measure/nbr_subs"/>
+        <skos:hasTopConcept rdf:resource="http://semantic.digital-agenda-data.eu/codelist/unit-measure/nbr_organisations"/>
+        <skos:hasTopConcept rdf:resource="http://semantic.digital-agenda-data.eu/codelist/unit-measure/pc_pub_serv_for_ent"/>
+        <rdfs:seeAlso rdf:resource="http://eurostat.linked-statistics.org/dic/unit"/>
+        <skos:hasTopConcept rdf:resource="http://semantic.digital-agenda-data.eu/codelist/unit-measure/pc_pop"/>
+        <rdf:type rdf:resource="http://purl.org/linked-data/sdmx#CodeList"/>
+        <skos:hasTopConcept rdf:resource="http://semantic.digital-agenda-data.eu/codelist/unit-measure/nbr_participations"/>
+        <skos:hasTopConcept rdf:resource="http://semantic.digital-agenda-data.eu/codelist/unit-measure/nbr_lines"/>
+        <skos:hasTopConcept rdf:resource="http://semantic.digital-agenda-data.eu/codelist/unit-measure/lines_per_100_pop"/>
+        <skos:hasTopConcept rdf:resource="http://semantic.digital-agenda-data.eu/codelist/unit-measure/euro_x_million_of_gdp"/>
+        <skos:hasTopConcept rdf:resource="http://semantic.digital-agenda-data.eu/codelist/unit-measure/pc_lines"/>
+        <skos:hasTopConcept rdf:resource="http://semantic.digital-agenda-data.eu/codelist/unit-measure/pc_ind_iu3"/>
+        <skos:hasTopConcept rdf:resource="http://semantic.digital-agenda-data.eu/codelist/unit-measure/pc_hh"/>
+        <skos:hasTopConcept rdf:resource="http://semantic.digital-agenda-data.eu/codelist/unit-measure/pc_ind_ilt12"/>
+        <skos:hasTopConcept rdf:resource="http://semantic.digital-agenda-data.eu/codelist/unit-measure/pc_ind"/>
+        <skos:hasTopConcept rdf:resource="http://semantic.digital-agenda-data.eu/codelist/unit-measure/n"/>
+        <skos:hasTopConcept rdf:resource="http://semantic.digital-agenda-data.eu/codelist/unit-measure/pc_ent"/>
+        <skos:hasTopConcept rdf:resource="http://semantic.digital-agenda-data.eu/codelist/unit-measure/pc_ent_cuse"/>
+        <skos:hasTopConcept rdf:resource="http://semantic.digital-agenda-data.eu/codelist/unit-measure/euro_x_hab"/>
+        <skos:hasTopConcept rdf:resource="http://semantic.digital-agenda-data.eu/codelist/unit-measure/subs_per_100_pop"/>
+        <skos:hasTopConcept rdf:resource="http://semantic.digital-agenda-data.eu/codelist/unit-measure/pc_turn"/>
+        <skos:hasTopConcept rdf:resource="http://semantic.digital-agenda-data.eu/codelist/unit-measure/pc_pub_serv_for_citizen"/>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+        <skos:hasTopConcept rdf:resource="http://semantic.digital-agenda-data.eu/codelist/unit-measure/pc_total_cost"/>
+        <skos:inScheme rdf:resource="http://semantic.digital-agenda-data.eu/def/scheme"/>
+        <rdfs:isDefinedBy rdf:resource="http://digital-agenda-data.eu/"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://semantic.digital-agenda-data.eu/codelist/unit-measure/pc_hh">
+        <skos:definition>Percentage of households</skos:definition>
+        <skos:altLabel>% hh</skos:altLabel>
+        <skos:notation>pc_hh</skos:notation>
+        <skos:prefLabel>Percentage of households</skos:prefLabel>
+        <skos:topConceptOf rdf:resource="http://semantic.digital-agenda-data.eu/codelist/unit-measure"/>
+        <rdf:type rdf:resource="http://semantic.digital-agenda-data.eu/def/class/UnitMeasure"/>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:seeAlso rdf:resource="http://eurostat.linked-statistics.org/dic/unit#PC_HH"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://semantic.digital-agenda-data.eu/codelist/unit-measure/pc_pop">
+        <skos:definition>Percentage of total population</skos:definition>
+        <skos:altLabel>% total pop</skos:altLabel>
+        <skos:notation>pc_pop</skos:notation>
+        <skos:prefLabel>Percentage of total population</skos:prefLabel>
+        <skos:topConceptOf rdf:resource="http://semantic.digital-agenda-data.eu/codelist/unit-measure"/>
+        <rdf:type rdf:resource="http://semantic.digital-agenda-data.eu/def/class/UnitMeasure"/>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:seeAlso rdf:resource="http://eurostat.linked-statistics.org/dic/unit#PC_POP"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://semantic.digital-agenda-data.eu/codelist/unit-measure/pc_pub_serv_for_citizen">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdf:type rdf:resource="http://semantic.digital-agenda-data.eu/def/class/UnitMeasure"/>
+        <skos:topConceptOf rdf:resource="http://semantic.digital-agenda-data.eu/codelist/unit-measure"/>
+        <skos:prefLabel>Percentage  of public services for citizens</skos:prefLabel>
+        <skos:notation>pc_pub_serv_for_citizen</skos:notation>
+        <skos:altLabel>% pub serv for citizen</skos:altLabel>
+        <skos:definition>Percentage  of public services for citizens</skos:definition>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://semantic.digital-agenda-data.eu/codelist/unit-measure/euro_x_hab">
+        <skos:definition>Euro per habitant</skos:definition>
+        <skos:altLabel>euro x hab</skos:altLabel>
+        <skos:notation>euro_x_hab</skos:notation>
+        <skos:prefLabel>Euro per habitant</skos:prefLabel>
+        <skos:topConceptOf rdf:resource="http://semantic.digital-agenda-data.eu/codelist/unit-measure"/>
+        <rdf:type rdf:resource="http://semantic.digital-agenda-data.eu/def/class/UnitMeasure"/>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://semantic.digital-agenda-data.eu/codelist/unit-measure/nbr_lines">
+        <skos:definition>Number of fixed lines</skos:definition>
+        <skos:altLabel>nbr lines</skos:altLabel>
+        <skos:notation>nbr_lines</skos:notation>
+        <skos:prefLabel>Number of fixed lines</skos:prefLabel>
+        <skos:topConceptOf rdf:resource="http://semantic.digital-agenda-data.eu/codelist/unit-measure"/>
+        <rdf:type rdf:resource="http://semantic.digital-agenda-data.eu/def/class/UnitMeasure"/>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://semantic.digital-agenda-data.eu/codelist/unit-measure/pc_ent_ade">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdf:type rdf:resource="http://semantic.digital-agenda-data.eu/def/class/UnitMeasure"/>
+        <skos:topConceptOf rdf:resource="http://semantic.digital-agenda-data.eu/codelist/unit-measure"/>
+        <skos:prefLabel>Percentage of enterprises using ADE</skos:prefLabel>
+        <skos:notation>pc_ent_ade</skos:notation>
+        <skos:altLabel>% ent ade</skos:altLabel>
+        <skos:definition>Percentage of enterprises using ADE</skos:definition>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://semantic.digital-agenda-data.eu/codelist/unit-measure/pc_organisations">
+        <skos:definition>Percentage of organizations</skos:definition>
+        <skos:altLabel>% organisations</skos:altLabel>
+        <skos:notation>pc_organisations</skos:notation>
+        <skos:prefLabel>Percentage of organizations</skos:prefLabel>
+        <skos:topConceptOf rdf:resource="http://semantic.digital-agenda-data.eu/codelist/unit-measure"/>
+        <rdf:type rdf:resource="http://semantic.digital-agenda-data.eu/def/class/UnitMeasure"/>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://semantic.digital-agenda-data.eu/codelist/unit-measure/pc_ind_ilt12">
+        <skos:definition>Percentage of individuals who used Internet within the last year</skos:definition>
+        <skos:altLabel>% ind ilt12</skos:altLabel>
+        <skos:notation>pc_ind_ilt12</skos:notation>
+        <skos:prefLabel>Percentage of individuals who used Internet within the last year</skos:prefLabel>
+        <skos:topConceptOf rdf:resource="http://semantic.digital-agenda-data.eu/codelist/unit-measure"/>
+        <rdf:type rdf:resource="http://semantic.digital-agenda-data.eu/def/class/UnitMeasure"/>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:seeAlso rdf:resource="http://eurostat.linked-statistics.org/dic/unit#PC_IND_ILT12"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://semantic.digital-agenda-data.eu/codelist/unit-measure/nbr_participations">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdf:type rdf:resource="http://semantic.digital-agenda-data.eu/def/class/UnitMeasure"/>
+        <skos:topConceptOf rdf:resource="http://semantic.digital-agenda-data.eu/codelist/unit-measure"/>
+        <skos:prefLabel>Number of participations</skos:prefLabel>
+        <skos:notation>nbr_participations</skos:notation>
+        <skos:altLabel>nb participations</skos:altLabel>
+        <skos:definition>Number of participations</skos:definition>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://semantic.digital-agenda-data.eu/codelist/unit-measure/pc_ent_cuse">
+        <skos:definition>Percentage of the enterprises which use a computer</skos:definition>
+        <skos:altLabel>% ent cuse</skos:altLabel>
+        <skos:notation>pc_ent_cuse</skos:notation>
+        <skos:prefLabel>Percentage of the enterprises which use a computer</skos:prefLabel>
+        <skos:topConceptOf rdf:resource="http://semantic.digital-agenda-data.eu/codelist/unit-measure"/>
+        <rdf:type rdf:resource="http://semantic.digital-agenda-data.eu/def/class/UnitMeasure"/>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://semantic.digital-agenda-data.eu/codelist/unit-measure/euro_x_million_of_gdp">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdf:type rdf:resource="http://semantic.digital-agenda-data.eu/def/class/UnitMeasure"/>
+        <skos:topConceptOf rdf:resource="http://semantic.digital-agenda-data.eu/codelist/unit-measure"/>
+        <skos:prefLabel>Euro * Million of GDP</skos:prefLabel>
+        <skos:notation>euro_x_million_of_GDP</skos:notation>
+        <skos:altLabel>euro x million of GDP</skos:altLabel>
+        <skos:definition>Euro * 1M / GDP</skos:definition>
+    </rdf:Description>
+</rdf:RDF>

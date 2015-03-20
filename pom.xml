@@ -119,13 +119,22 @@
 			<artifactId>SdmxFileQueryProcessor</artifactId>
 		</dependency>
 		
-		<!-- Jena -->
+		<!-- Jena
+		This breaks XML parsing when loading spring beans. Using jena-tdb
+		as a workaround.
         <dependency>
             <groupId>org.apache.jena</groupId>
             <artifactId>apache-jena-libs</artifactId>
             <type>pom</type>
             <version>2.10.1</version>
         </dependency>
+        -->
+        
+        <dependency>
+    		<groupId>org.apache.jena</groupId>
+    		<artifactId>jena-tdb</artifactId>
+    		<version>0.9.0-incubating</version>
+		</dependency>
 
 		<!-- UNIT TESTING -->
 		<dependency>

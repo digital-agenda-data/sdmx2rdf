@@ -67,16 +67,17 @@ public class SdmxReader {
 		
 		SdmxDataStructureDefinitionConverter dsdConverter = new SdmxDataStructureDefinitionConverter(beans, uriMap);
 		SdmxDatasetConverter dataConverter = new SdmxDatasetConverter(dre, uriMap, dsdConverter.getDSD());
-		dsdConverter.parseDataStructure();
-		dataConverter.parseDataSet();
+
 		
 		try {
+			dsdConverter.parseDataStructure();
+			dataConverter.parseDataSet();
 			FileOutputStream dataOutputFile = new FileOutputStream("data_output");
-			dataConverter.GetModel().write(dataOutputFile);
+			dataConverter.GetModel().write(dataOutputFile, "RDF/XML-ABBREV");
 			dataOutputFile.close();
 			
 			FileOutputStream dsdOutputFile = new FileOutputStream("dsd_output");
-			dsdConverter.GetModel().write(dsdOutputFile);
+			dsdConverter.GetModel().write(dsdOutputFile, "RDF/XML-ABBREV");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

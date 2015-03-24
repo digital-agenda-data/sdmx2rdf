@@ -1,38 +1,22 @@
 package sdmx.converter;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.OutputStream;
 import java.util.Map.Entry;
 
-import org.sdmxsource.sdmx.api.constants.SDMX_STRUCTURE_TYPE;
 import org.sdmxsource.sdmx.api.engine.DataReaderEngine;
-import org.sdmxsource.sdmx.api.manager.retrieval.SdmxBeanRetrievalManager;
-import org.sdmxsource.sdmx.api.model.StructureWorkspace;
-import org.sdmxsource.sdmx.api.model.beans.SdmxBeans;
-import org.sdmxsource.sdmx.api.model.beans.base.ConceptBaseBean;
-import org.sdmxsource.sdmx.api.model.beans.base.MaintainableBean;
-import org.sdmxsource.sdmx.api.model.beans.codelist.CodeBean;
-import org.sdmxsource.sdmx.api.model.beans.codelist.CodelistBean;
 import org.sdmxsource.sdmx.api.model.beans.datastructure.DataStructureBean;
-import org.sdmxsource.sdmx.api.model.beans.datastructure.DimensionBean;
-import org.sdmxsource.sdmx.api.model.beans.datastructure.DimensionListBean;
+import org.sdmxsource.sdmx.api.model.beans.datastructure.PrimaryMeasureBean;
 import org.sdmxsource.sdmx.api.model.data.KeyValue;
 import org.sdmxsource.sdmx.api.model.data.Keyable;
 import org.sdmxsource.sdmx.api.model.data.Observation;
 import org.sdmxsource.sdmx.api.model.header.DatasetStructureReferenceBean;
 import org.sdmxsource.sdmx.api.model.header.HeaderBean;
-import org.sdmxsource.sdmx.api.util.ReadableDataLocation;
-import org.sdmxsource.sdmx.structureretrieval.manager.InMemoryRetrievalManager;
 
 import com.hp.hpl.jena.datatypes.BaseDatatype;
-import com.hp.hpl.jena.datatypes.RDFDatatype;
 import com.hp.hpl.jena.rdf.model.Literal;
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
 import com.hp.hpl.jena.rdf.model.Property;
 import com.hp.hpl.jena.rdf.model.Resource;
-import com.hp.hpl.jena.vocabulary.RDF;
 
 public class SdmxDatasetConverter {
 	private DataReaderEngine dre;
@@ -73,11 +57,17 @@ public class SdmxDatasetConverter {
 		//dataset = model.createResource("http://purl.org/linked-data/sdmx/2009/dataset#" + header.getDatasetId());
 		//dataStructureDefinition = model.createResource("http://purl.org/linked-data/sdmx/2009/dsd#" + header.getDatasetId());
 		dataFlow = model.createResource("http://purl.org/linked-data/sdmx/2009/dataflow#" + header.getDatasetId());
+		
+		for (DatasetStructureReferenceBean structure : header.getStructures()) {
+			System.out.println("Dimension at observation: " + structure.getDimensionAtObservation());
+			System.out.println("FIXED ID: " + PrimaryMeasureBean.FIXED_ID);
+			System.out.println("Structure id:" + structure.getId());
+		}
 	}
 		
-	public void parseDataSet() {
+	public void parseDataSet() throws Exception {
 		
-		
+		initResources();
 		// TODO add type dcat:Dataset
 		
 		dataset.addProperty(Cube.structure, dataStructureDefinition);
@@ -107,13 +97,16 @@ public class SdmxDatasetConverter {
 						
 						Property property = model.createProperty("http://smdx-dimension:" + seriesKey.getConcept());
 						rdfObs.addProperty(property, code);
-						
 					}
+					
 					if (currentKey.isTimeSeries()) {
 						Property obsX = model.createProperty("http://sdmx-dimension:timePeriod");
 						rdfObs.addProperty(obsX, obs.getObsTime());
 						BaseDatatype datatType;
+					} else {
+						throw new Exception("Not a time series.");
 					}
+					
 					Property obsY = model.createProperty("http://sdmx-measure:obsValue");
 					Literal value = model.createTypedLiteral(new Double(Double.parseDouble(obs.getObservationValue())));
 					rdfObs.addProperty(obsY, value);

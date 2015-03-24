@@ -12,6 +12,8 @@ import org.sdmxsource.sdmx.api.model.beans.base.SDMXBean;
 import org.sdmxsource.sdmx.api.model.beans.codelist.CodeBean;
 import org.sdmxsource.sdmx.api.model.beans.codelist.CodelistBean;
 import org.sdmxsource.sdmx.api.model.beans.datastructure.DataStructureBean;
+import org.sdmxsource.sdmx.api.model.beans.datastructure.DimensionBean;
+import org.sdmxsource.sdmx.api.model.beans.reference.CrossReferenceBean;
 
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
@@ -55,37 +57,61 @@ public class SdmxDataStructureDefinitionConverter {
 		for (MaintainableBean currentMaintainable : sdmxBeans.getAllMaintainables()) {
 			SDMX_STRUCTURE_TYPE structureType = currentMaintainable.getStructureType();
 		
-			Resource component;
 			if (structureType == SDMX_STRUCTURE_TYPE.CODE_LIST) {
-				component = parseCodelist((CodelistBean) currentMaintainable);
+				//parseCodelist((CodelistBean) currentMaintainable);
+			} else if (structureType == SDMX_STRUCTURE_TYPE.DSD) {
+				DataStructureBean bean = (DataStructureBean) currentMaintainable;
+				for (DimensionBean dimension : bean.getDimensionList().getDimensions()) {
+					parseDimension(dimension);
+				}
 			} else {
 				System.out.println("UNKOWN: " + structureType);	
-				component = model.createResource(dsdResource.getURI() + "unknown/" + currentMaintainable.hashCode());
-			}
-			dsdResource.addProperty(Cube.component, component);
-		}
-		
-		try {
-			File file = new File("DSD_output2");
-			FileOutputStream output = new FileOutputStream(file);
-			model.write(output, "RDF/XML-ABBREV");
-		} catch (Exception e) {
-			e.printStackTrace();
+				Resource component = model.createResource(dsdResource.getURI() + "unknown/" + currentMaintainable.hashCode());
+				dsdResource.addProperty(Cube.component, component);
+			}	
 		}
 	}
 	
-	private void parseDataStructure(DataStructureBean bean) {
+	private void parseDimension(DimensionBean dimension) {
 		
+		Resource componentSpecification = model.createResource(dsdResource.getURI() + "dimension/" + dimension.getId());
+		// TODO(catalinb):we can probably skip this one
+		Resource dimensionRdf = model.createResource(dsdResource.getURI() + "property/" + dimension.getId());
+		dimensionRdf.addProperty(RDF.type, RDF.Property);
+		dimensionRdf.addProperty(RDF.type, Cube.DimensionProperty);
+		
+		CrossReferenceBean concept = dimension.getConceptRef();
+		Resource conceptRdf = model.createResource(dsdResource.getURI() + "concept/" + concept.getFullId());
+
+		conceptRdf.addProperty(RDF.type, Skos.Concept);
+		conceptRdf.addProperty(RDF.type, Sdmx.Concept);
+		conceptRdf.addProperty(RDF.type, Sdmx.IdentityRole);
+		dimensionRdf.addProperty(Cube.concept, conceptRdf);
+		
+		if (dimension.hasCodedRepresentation()) {
+			CrossReferenceBean codelist = dimension.getRepresentation().getRepresentation();
+			
+			// FIXME(catalinb): this needs to match the codelist resource generated when parsing the DSD
+			Resource referencedCodelistRdf = model.createResource(dsdResource.getURI() + "codelist/" + codelist.getMaintainableId());
+			dimensionRdf.addProperty(Cube.codeList, referencedCodelistRdf);
+		} else {
+			System.out.println("Representation type:" + dimension.getRepresentation().getTextFormat().getTextType());
+			// TODO(catalinb): handle non coded representation
+		}
+		
+		componentSpecification.addProperty(Cube.dimension, dimensionRdf);
+		dsdResource.addProperty(Cube.component, componentSpecification);
 	}
 
-	private Resource parseCodelist(CodelistBean bean) {
+	private void parseCodelist(CodelistBean bean) {
 		SDMX_STRUCTURE_TYPE structureType = bean.getStructureType();
 		
 		Resource componentSpecification = model.createResource(dsdResource.getURI() + "codelist/" + bean.hashCode());
 		componentSpecification.addProperty(RDF.type, Cube.ComponentSpecification);
+		componentSpecification.addProperty(RDF.type, Cube.dimension);
 		
-		return componentSpecification;
-	}
+		dsdResource.addProperty(Cube.component, componentSpecification);
+	}	
 	
 	public Model GetModel() {
 		return model;

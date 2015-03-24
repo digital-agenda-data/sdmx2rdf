@@ -106,7 +106,7 @@ public class SdmxDataStructureDefinitionConverter {
 	private void parseCodelist(CodelistBean bean) {
 		SDMX_STRUCTURE_TYPE structureType = bean.getStructureType();
 		
-		Resource componentSpecification = model.createResource(dsdResource.getURI() + "codelist/" + bean.hashCode());
+		Resource componentSpecification = model.createResource(dsdResource.getURI() + "codelist/" + bean.getId());
 		componentSpecification.addProperty(RDF.type, Cube.ComponentSpecification);
 		componentSpecification.addProperty(RDF.type, Cube.dimension);
 		

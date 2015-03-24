@@ -23,6 +23,9 @@ public class URIMapper {
 		nsPrefixMap.put("sdmx", Sdmx.NS);
 		nsPrefixMap.put("qb", Cube.NS);
 		nsPrefixMap.put("dad", rootNS);
+		
+		nsPrefixMap.put("dad-dimension", rootNS + "dimension/");
+		nsPrefixMap.put("dad-measure", rootNS + "measure/");
 	}
 	
 	public String getRoot() {

@@ -63,7 +63,7 @@ public class SdmxReader {
 		DataReaderEngine dre = dataReaderManager.getDataReaderEngine(dataLocation, retreivalManager);
 		
 		
-		URIMapper uriMap = new URIMapper("http://semantic.digitial-agenda-data.eu/");
+		URIMapper uriMap = new URIMapper("http://semantic.digital-agenda-data.eu/");
 		
 		SdmxDataStructureDefinitionConverter dsdConverter = new SdmxDataStructureDefinitionConverter(beans, uriMap);
 		SdmxDatasetConverter dataConverter = new SdmxDatasetConverter(dre, uriMap, dsdConverter.getDSD());

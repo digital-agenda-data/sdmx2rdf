@@ -95,11 +95,13 @@ public class SdmxDatasetConverter {
 						String codeUri = uriMapper.getRoot() + "def/code/" + seriesKey.getConcept() + "#" + seriesKey.getCode();
 						Resource code = model.createResource(codeUri);
 						
-						Property property = model.createProperty("http://smdx-dimension:" + seriesKey.getConcept());
+						// FIXME(catalinb): this must match the URL from the DSD entry
+						Property property = model.createProperty(uriMapper.getRoot() + "dimension/" + seriesKey.getConcept());
 						rdfObs.addProperty(property, code);
 					}
 					
 					if (currentKey.isTimeSeries()) {
+						//FIXME(catalinb)
 						Property obsX = model.createProperty("http://sdmx-dimension:timePeriod");
 						rdfObs.addProperty(obsX, obs.getObsTime());
 						BaseDatatype datatType;
@@ -107,10 +109,8 @@ public class SdmxDatasetConverter {
 						throw new Exception("Not a time series.");
 					}
 					
-					Property obsY = model.createProperty("http://sdmx-measure:obsValue");
 					Literal value = model.createTypedLiteral(new Double(Double.parseDouble(obs.getObservationValue())));
-					rdfObs.addProperty(obsY, value);
-					rdfObs.addProperty(obsY, value);
+					rdfObs.addProperty(Cube.measure, value);
 					dataset.addProperty(Cube.observation, rdfObs);
 				}
 			}

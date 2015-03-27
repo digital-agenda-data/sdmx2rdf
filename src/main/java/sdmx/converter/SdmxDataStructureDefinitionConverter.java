@@ -58,7 +58,7 @@ public class SdmxDataStructureDefinitionConverter {
 			SDMX_STRUCTURE_TYPE structureType = currentMaintainable.getStructureType();
 		
 			if (structureType == SDMX_STRUCTURE_TYPE.CODE_LIST) {
-				//parseCodelist((CodelistBean) currentMaintainable);
+				parseCodelist((CodelistBean) currentMaintainable);
 			} else if (structureType == SDMX_STRUCTURE_TYPE.DSD) {
 				DataStructureBean bean = (DataStructureBean) currentMaintainable;
 				for (DimensionBean dimension : bean.getDimensionList().getDimensions()) {
@@ -108,7 +108,15 @@ public class SdmxDataStructureDefinitionConverter {
 		
 		Resource componentSpecification = model.createResource(dsdResource.getURI() + "codelist/" + bean.getId());
 		componentSpecification.addProperty(RDF.type, Cube.ComponentSpecification);
-		componentSpecification.addProperty(RDF.type, Cube.dimension);
+		componentSpecification.addProperty(RDF.type, Skos.ConceptScheme);
+		
+		for (CodeBean codeBean : bean.getItems()) {
+			Resource codeRdf = model.createResource(dsdResource.getURI() + "code/" + bean.getId() + "#" + codeBean.getId());
+			codeRdf.addProperty(RDF.type, Skos.Concept);
+			codeRdf.addProperty(Skos.notation, codeBean.getId());
+			
+			componentSpecification.addProperty(Skos.hasTopConcept, codeRdf);
+		}
 		
 		dsdResource.addProperty(Cube.component, componentSpecification);
 	}	

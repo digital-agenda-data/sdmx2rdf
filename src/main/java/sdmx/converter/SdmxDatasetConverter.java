@@ -109,6 +109,13 @@ public class SdmxDatasetConverter {
 						throw new Exception("Not a time series.");
 					}
 					
+					for (KeyValue entry : obs.getAttributes()) {
+						// TODO(catalinb): map this beter
+						String codeUri = uriMapper.getRoot() + "def/code/" + entry.getConcept() + "#" + entry.getCode();
+						
+						rdfObs.addProperty(Cube.attribute, model.createResource(codeUri));
+					}
+					
 					Literal value = model.createTypedLiteral(new Double(Double.parseDouble(obs.getObservationValue())));
 					rdfObs.addProperty(Cube.measure, value);
 					dataset.addProperty(Cube.observation, rdfObs);

@@ -19,6 +19,7 @@ import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
 import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.vocabulary.RDF;
+import com.hp.hpl.jena.vocabulary.RDFS;
 
 public class SdmxDataStructureDefinitionConverter {
 
@@ -82,6 +83,7 @@ public class SdmxDataStructureDefinitionConverter {
 		
 		CrossReferenceBean concept = dimension.getConceptRef();
 		Resource conceptRdf = model.createResource(dsdResource.getURI() + "concept/" + concept.getFullId());
+		
 
 		conceptRdf.addProperty(RDF.type, Skos.Concept);
 		conceptRdf.addProperty(RDF.type, Sdmx.Concept);
@@ -114,6 +116,10 @@ public class SdmxDataStructureDefinitionConverter {
 			Resource codeRdf = model.createResource(dsdResource.getURI() + "code/" + bean.getId() + "#" + codeBean.getId());
 			codeRdf.addProperty(RDF.type, Skos.Concept);
 			codeRdf.addProperty(Skos.notation, codeBean.getId());
+			codeRdf.addProperty(RDFS.label, codeBean.getName());
+			if (codeBean.getDescription() != null) {
+				codeRdf.addProperty(RDFS.comment, codeBean.getDescription());
+			}
 			
 			componentSpecification.addProperty(Skos.hasTopConcept, codeRdf);
 		}

@@ -11,8 +11,10 @@ import org.sdmxsource.sdmx.api.model.beans.base.MaintainableBean;
 import org.sdmxsource.sdmx.api.model.beans.base.SDMXBean;
 import org.sdmxsource.sdmx.api.model.beans.codelist.CodeBean;
 import org.sdmxsource.sdmx.api.model.beans.codelist.CodelistBean;
+import org.sdmxsource.sdmx.api.model.beans.datastructure.AttributeBean;
 import org.sdmxsource.sdmx.api.model.beans.datastructure.DataStructureBean;
 import org.sdmxsource.sdmx.api.model.beans.datastructure.DimensionBean;
+import org.sdmxsource.sdmx.api.model.beans.datastructure.PrimaryMeasureBean;
 import org.sdmxsource.sdmx.api.model.beans.reference.CrossReferenceBean;
 
 import com.hp.hpl.jena.rdf.model.Model;
@@ -65,12 +67,43 @@ public class SdmxDataStructureDefinitionConverter {
 				for (DimensionBean dimension : bean.getDimensionList().getDimensions()) {
 					parseDimension(dimension);
 				}
+				
+				// TODO(catalinb): MeasureListBean doesn't seem to hold a list of measures
+				PrimaryMeasureBean primaryMeasure = bean.getMeasureList().getPrimaryMeasure();
+				parsePrimaryMeasure(primaryMeasure);
+				
+				
+				// TODO(catalinb): attributes
+				for (AttributeBean attribute : bean.getAttributeList().getAttributes()) {
+					System.out.println("Attribute: " + attribute);
+				}
+				
+			} else if (structureType == SDMX_STRUCTURE_TYPE.CONCEPT_SCHEME) {
+				System.out.println("CONCEPT SCHEME");
 			} else {
 				System.out.println("UNKOWN: " + structureType);	
 				Resource component = model.createResource(dsdResource.getURI() + "unknown/" + currentMaintainable.hashCode());
 				dsdResource.addProperty(Cube.component, component);
 			}	
 		}
+	}
+	
+	private void parsePrimaryMeasure(PrimaryMeasureBean primaryMeasure) {
+		Resource componentSpecification  = model.createResource(dsdResource.getURI() + "measure/");
+		componentSpecification.addProperty(RDF.type, Cube.ComponentSpecification);
+		
+		Resource measureRdf = model.createResource(dsdResource.getURI() + "measure/" + primaryMeasure.getId());
+		measureRdf.addProperty(RDF.type, Cube.MeasureProperty);
+		measureRdf.addProperty(RDF.type, RDF.Property);
+		
+		// TODO(catalinb): better resourceGetter
+		CrossReferenceBean concept = primaryMeasure.getConceptRef();
+		Resource conceptRdf = model.createResource(dsdResource.getURI() + "concept/" + concept.getFullId());
+		
+		measureRdf.addProperty(Cube.concept, conceptRdf);
+		
+		componentSpecification.addProperty(Cube.measure, measureRdf);
+		dsdResource.addProperty(Cube.component, componentSpecification);
 	}
 	
 	private void parseDimension(DimensionBean dimension) {

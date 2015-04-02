@@ -23,8 +23,9 @@ public class URIMapper {
 		nsPrefixMap.put("sdmx", Sdmx.NS);
 		nsPrefixMap.put("qb", Cube.NS);
 		nsPrefixMap.put("skos", Skos.NS);
+		nsPrefixMap.put("owl", "http://www.w3.org/2002/07/owl#");
+
 		nsPrefixMap.put("dad", rootNS);
-		
 		nsPrefixMap.put("dad-dimension", rootNS + "dimension/");
 		nsPrefixMap.put("dad-measure", rootNS + "measure/");
 	}

@@ -28,9 +28,8 @@ public class DSDConverter extends AbstractConverter<DataStructureBean> {
 		//returns a qb:DataStructureDefinition
 		logger.debug("Converting " + bean);
 		Resource dsdResource = model.createResource(uriFactory.getURI(bean.getUrn()));
-		//dsdResource.addProperty(RDF.type, Sdmx.DataStructureDefinition);
-		dsdResource.addProperty(RDF.type, Cube.DataStructureDefinition);
 		dsdResource.addProperty(RDF.type, Sdmx.DataStructureDefinition);
+		dsdResource.addProperty(RDF.type, Cube.DataStructureDefinition);
 
 		for (DimensionBean dimension : bean.getDimensionList().getDimensions()) {
 			Resource componentSpecification = converterFactory.convert(dimension, model);
@@ -51,7 +50,6 @@ public class DSDConverter extends AbstractConverter<DataStructureBean> {
 		if ( componentSpecification != null ) {
 			dsdResource.addProperty(Cube.component, componentSpecification);
 		}
-		
 		return dsdResource;
 	}
 }

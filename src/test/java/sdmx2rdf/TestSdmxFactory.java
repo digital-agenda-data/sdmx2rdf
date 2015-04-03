@@ -69,8 +69,7 @@ public class TestSdmxFactory {
 	public void test1() throws IOException {
 		String dataset = "isoc_ic_biski";
 
-		mainConverter.parse(dataflowFactory.getDSD(dataset), dataflowFactory.getData(dataset), dataflowFactory.getDataflow(dataset));
-		//mainConverter.parse(dataflowFactory.getDSD(dataset), null);
+		mainConverter.parse(dataflowFactory.getDataflow(dataset), dataflowFactory.getDSD(dataset), dataflowFactory.getData(dataset));
 		
 		FileOutputStream out = new FileOutputStream(dataset + ".rdf");
 		mainConverter.writeTo(out);
@@ -80,6 +79,7 @@ public class TestSdmxFactory {
 	public void testURIMapper() {
 		logger.info(uriManager.getURI("urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:DSD_isoc_ic_biski(1.0)"));
 		logger.info(uriManager.getURI("urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=ESTAT:DSD_isoc_ic_biski(1.0).FREQ"));
+		logger.info(uriManager.getURI("urn:sdmx:org.sdmx.infomodel.datastructure.TimeDimension=ESTAT:DSD_isoc_ic_biski(1.0).TIME_PERIOD"));
 		logger.info(uriManager.getURI("urn:sdmx:org.sdmx.infomodel.codelist.Codelist=ESTAT:CL_INDIC_IS(1.0)"));
 		logger.info(uriManager.getURI("urn:sdmx:org.sdmx.infomodel.codelist.Code=ESTAT:CL_INDIC_IS(1.0).IC_SK"));
 		logger.info(uriManager.getURI("urn:sdmx:org.sdmx.infomodel.conceptscheme.ConceptScheme=ESTAT:CS_DSD_isoc_ic_biski(1.0)"));

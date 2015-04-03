@@ -3,7 +3,8 @@ package sdmx2rdf;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.text.MessageFormat;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Map.Entry;
 
 import javax.annotation.PostConstruct;
@@ -18,10 +19,7 @@ import org.sdmxsource.sdmx.api.manager.retrieval.SdmxBeanRetrievalManager;
 import org.sdmxsource.sdmx.api.model.StructureWorkspace;
 import org.sdmxsource.sdmx.api.model.beans.SdmxBeans;
 import org.sdmxsource.sdmx.api.model.beans.base.MaintainableBean;
-import org.sdmxsource.sdmx.api.model.beans.datastructure.DataStructureBean;
-import org.sdmxsource.sdmx.api.model.data.KeyValue;
 import org.sdmxsource.sdmx.api.model.data.Observation;
-import org.sdmxsource.sdmx.api.model.header.DatasetHeaderBean;
 import org.sdmxsource.sdmx.api.util.ReadableDataLocation;
 import org.sdmxsource.sdmx.dataparser.manager.DataReaderManager;
 import org.sdmxsource.sdmx.structureretrieval.manager.InMemoryRetrievalManager;
@@ -56,49 +54,50 @@ public class Sdmx2RdfConverter {
 
 	private static final Log logger = LogFactory.getLog(TestSdmxFactory.class);
 
-	public void parse(InputStream structuresInputStream, InputStream dataInputStream, InputStream dataflowInputStream) {
+	public void parse(InputStream dataflowInputStream, InputStream structuresInputStream, InputStream dataInputStream) {
 		SdmxBeans beans = null;
-		SdmxBeans dataflowBeans = null;
-				
-		if (structuresInputStream != null) {
-			ReadableDataLocation srdl = rdlFactory.getReadableDataLocation(structuresInputStream);
-			StructureWorkspace workspace = structureParsingManager.parseStructures(srdl);
-			beans = workspace.getStructureBeans(true);
-			
-			if (dataflowInputStream != null) {
-				ReadableDataLocation dataflowLocation = rdlFactory.getReadableDataLocation(dataflowInputStream);
-				StructureWorkspace dataflowWorkspace = structureParsingManager.parseStructures(dataflowLocation);
-				
-				dataflowBeans = dataflowWorkspace.getStructureBeans(true);
-			}
 
-			for (MaintainableBean bean : beans.getAllMaintainables()) {
-				SDMX_STRUCTURE_TYPE beanType = bean.getStructureType();
-				logger.info(MessageFormat.format("Found {0}, id={1}, name={2}", beanType, bean.getId(), bean.getName()));
-				converterFactory.convert(bean, model);
+		ReadableDataLocation dataflowLocation = rdlFactory.getReadableDataLocation(dataflowInputStream);
+		StructureWorkspace dataflowWorkspace = structureParsingManager.parseStructures(dataflowLocation);
+		beans = dataflowWorkspace.getStructureBeans(true);
+		SdmxBeanRetrievalManager retreivalManager = new InMemoryRetrievalManager(beans);
+
+		ReadableDataLocation srdl = rdlFactory.getReadableDataLocation(structuresInputStream);
+		StructureWorkspace workspace = structureParsingManager.parseStructures(srdl);
+		beans.merge(workspace.getStructureBeans(true));
+
+		Map<String, Resource> datasetMap = new HashMap<String, Resource>();
+		Map<String, Resource> dsdMap = new HashMap<String, Resource>();
+		for (MaintainableBean bean : beans.getAllMaintainables()) {
+			SDMX_STRUCTURE_TYPE beanType = bean.getStructureType();
+			logger.info(MessageFormat.format("Found {0}, id={1}, name={2}", beanType, bean.getId(), bean.getName()));
+			Resource resource = converterFactory.convert(bean, model);
+			switch (bean.getStructureType()) {
+			case DATAFLOW:
+				datasetMap.put(bean.getId(), resource);
+				break;
+			case DSD:
+				dsdMap.put(bean.getId(), resource);
+				// model.setNsPrefix(bean.getId()+"-dimension", resource.getURI() + "/Dimension/");
+				break;
+			default:
+				break;
 			}
 		}
 
 		// read data
 		if (dataInputStream != null) {
-			//beans.merge(dataflowBeans);
-			SdmxBeanRetrievalManager retreivalManager = new InMemoryRetrievalManager(beans);
 			ReadableDataLocation drdl = rdlFactory.getReadableDataLocation(dataInputStream);
 			DataReaderEngine dre = dataReaderManager.getDataReaderEngine(drdl, retreivalManager);
-		
+			Resource datasetRdf = datasetMap.get(dre.getHeader().getDatasetId());
 
-			// hack sa vedem ca merge
-			Resource dataset = model.createResource();
 			while (dre.moveNextDataset()) {
-				List<KeyValue> dataSetAttributes = dre.getDatasetAttributes();
-				dre.getCurrentDatasetHeaderBean();				
-				
 				while (dre.moveNextKeyable()) {
-					dre.getCurrentKey();
-					dre.getDataStructure();
 					while (dre.moveNextObservation()) {
 						Observation obs = dre.getCurrentObservation();
-						converterFactory.getObservationConverter().convert(dataset, obs, model);
+						// String dimensionAtObservation =
+						// dre.getCurrentDatasetHeaderBean().getDataStructureReference().getDimensionAtObservation();
+						converterFactory.getObservationConverter().convert(datasetRdf, obs, model, retreivalManager);
 					}
 				}
 			}

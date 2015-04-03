@@ -18,9 +18,6 @@ import com.hp.hpl.jena.rdf.model.Resource;
 public class ConverterFactory {
 
 	@Autowired
-	protected DatasetHeaderConverter datasetHeaderConverter;
-	
-	@Autowired
 	protected ObservationConverter observationConverter;
 	
 	protected Map<SDMX_STRUCTURE_TYPE, Converter<? extends SDMXBean>> converterMap = new HashMap<SDMX_STRUCTURE_TYPE, Converter<? extends SDMXBean>>();
@@ -38,11 +35,6 @@ public class ConverterFactory {
 
 	public Converter getConverter(SDMXBean bean) {
 		return getConverter(bean.getStructureType());
-	}
-	
-	// hack: instantiate converter for the dataset header bean
-	public DatasetHeaderConverter getDatasetHeaderConverter() {
-		return datasetHeaderConverter;
 	}
 	
 	public ObservationConverter getObservationConverter() {

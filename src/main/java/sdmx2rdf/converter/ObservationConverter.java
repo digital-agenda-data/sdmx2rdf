@@ -2,11 +2,13 @@ package sdmx2rdf.converter;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.sdmxsource.sdmx.api.manager.retrieval.SdmxBeanRetrievalManager;
 import org.sdmxsource.sdmx.api.model.beans.codelist.CodeBean;
 import org.sdmxsource.sdmx.api.model.beans.codelist.CodelistBean;
-import org.sdmxsource.sdmx.api.model.beans.conceptscheme.ConceptBean;
 import org.sdmxsource.sdmx.api.model.beans.datastructure.AttributeBean;
+import org.sdmxsource.sdmx.api.model.beans.datastructure.DataStructureBean;
 import org.sdmxsource.sdmx.api.model.beans.datastructure.DimensionBean;
+import org.sdmxsource.sdmx.api.model.beans.datastructure.PrimaryMeasureBean;
 import org.sdmxsource.sdmx.api.model.beans.reference.CrossReferenceBean;
 import org.sdmxsource.sdmx.api.model.data.KeyValue;
 import org.sdmxsource.sdmx.api.model.data.Keyable;
@@ -14,14 +16,14 @@ import org.sdmxsource.sdmx.api.model.data.Observation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.hp.hpl.jena.datatypes.BaseDatatype;
+import sdmx.converter.Cube;
+import sdmx2rdf.URIFactory;
+
 import com.hp.hpl.jena.rdf.model.Literal;
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.Property;
 import com.hp.hpl.jena.rdf.model.Resource;
-
-import sdmx.converter.Cube;
-import sdmx2rdf.URIFactory;
+import com.hp.hpl.jena.vocabulary.RDF;
 
 @Service
 public class ObservationConverter {
@@ -34,10 +36,10 @@ public class ObservationConverter {
 
 	protected final Log logger = LogFactory.getLog(this.getClass());
 	
-	public Resource convert(Resource dataset, Observation observation, Model model) {
+	public Resource convert(Resource dataset, Observation observation, Model model, SdmxBeanRetrievalManager retreivalManager) {
 		Keyable seriesKey = observation.getSeriesKey();
 		
-		String uri = dataset.getURI();
+		String uri = dataset.getURI() + "/data/";
 		for (KeyValue key : seriesKey.getKey()) {
 			uri += key.getCode() + "/";
 		}
@@ -47,45 +49,56 @@ public class ObservationConverter {
 		}
 		
 		Resource rdfObs = model.createResource(uri);
+		rdfObs.addProperty(Cube.dataSet, dataset);
+		rdfObs.addProperty(RDF.type, Cube.Observation);
+
+		DataStructureBean dsd = seriesKey.getDataStructure();
+		// add series keys
 		for (KeyValue keyValue : seriesKey.getKey()) {
-			DimensionBean dimensionBean = seriesKey.getDataStructure().getDimension(keyValue.getConcept());
-			logger.error(dimensionBean);
+			DimensionBean dimensionBean = dsd.getDimension(keyValue.getConcept());
 			if (dimensionBean.hasCodedRepresentation()) {
 				CrossReferenceBean codelistRef = dimensionBean.getRepresentation().getRepresentation();
-				CodelistBean codelistBean = (CodelistBean) codelistRef.getChildReference();
-				logger.error(codelistBean);
-				logger.error(keyValue.getCode());
+				CodelistBean codelistBean = (CodelistBean) retreivalManager.getMaintainableBean(codelistRef);
 				CodeBean codeBean = codelistBean.getCodeById(keyValue.getCode());
 				
 				Property dimensionProperty = model.createProperty(uriFactory.getURI(dimensionBean.getUrn()));
 				Resource codeResource = model.createResource(uriFactory.getURI(codeBean.getUrn()));
 				rdfObs.addProperty(dimensionProperty, codeResource);
 			} else {
-				logger.warn("unsupported dimension representation");
+				logger.error("unsupported dimension representation");
 			}
 		}
 		
 		if (seriesKey.isTimeSeries()) {
 			//FIXME(catalinb)
-			DimensionBean timeDimension = observation.getSeriesKey().getDataStructure().getTimeDimension();
+			// what xsd:datatype?
+			DimensionBean timeDimension = dsd.getTimeDimension();
 			Property timeDimensionProperty = model.createProperty(uriFactory.getURI(timeDimension.getUrn()));
 			rdfObs.addProperty(timeDimensionProperty, observation.getObsTime());
 		} else {
-			logger.warn("Only time series supported.");
+			logger.error("Only time series supported.");
 		}
 		
-		for (KeyValue entry : observation.getAttributes()) {
-			// TODO(catalinb): map this beter
+		for (KeyValue keyValue : observation.getAttributes()) {
+			AttributeBean attributeBean = dsd.getAttribute(keyValue.getConcept());
+			Property attributeProperty = model.createProperty(uriFactory.getURI(attributeBean.getUrn()));
+			if (attributeBean.hasCodedRepresentation()) {
+				CrossReferenceBean codelistRef = attributeBean.getRepresentation().getRepresentation();
+				CodelistBean codelistBean = (CodelistBean) retreivalManager.getMaintainableBean(codelistRef);
+				CodeBean codeBean = codelistBean.getCodeById(keyValue.getCode());
+				Resource codeResource = model.createResource(uriFactory.getURI(codeBean.getUrn()));
+				rdfObs.addProperty(attributeProperty, codeResource);
+			} else {
+				logger.error("unsupported attribute representation");
+			}
 
-			String attributeID = entry.getConcept();
-			AttributeBean attributeBean = seriesKey.getDataStructure().getAttribute(attributeID);
-			
-			rdfObs.addProperty(Cube.attribute, model.createResource(uriFactory.getURI(attributeBean.getUrn())));
 		}
 		
-		Literal value = model.createTypedLiteral(new Double(Double.parseDouble(observation.getObservationValue())));
-		rdfObs.addProperty(Cube.measure, value);
-		dataset.addProperty(Cube.observation, rdfObs);
+		// get primary measure
+		PrimaryMeasureBean primaryMeasureBean = dsd.getPrimaryMeasure();
+		Property measureProperty = model.createProperty(uriFactory.getURI(primaryMeasureBean.getUrn()));
+		Literal value = model.createTypedLiteral((Object)observation.getObservationValue());
+		rdfObs.addProperty(measureProperty, value);
 		
 		return rdfObs;
 	}

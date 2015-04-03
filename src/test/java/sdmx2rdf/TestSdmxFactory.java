@@ -69,7 +69,7 @@ public class TestSdmxFactory {
 	public void test1() throws IOException {
 		String dataset = "isoc_ic_biski";
 
-		mainConverter.parse(dataflowFactory.getDSD(dataset), dataflowFactory.getData(dataset));
+		mainConverter.parse(dataflowFactory.getDSD(dataset), dataflowFactory.getData(dataset), dataflowFactory.getDataflow(dataset));
 		//mainConverter.parse(dataflowFactory.getDSD(dataset), null);
 		
 		FileOutputStream out = new FileOutputStream(dataset + ".rdf");

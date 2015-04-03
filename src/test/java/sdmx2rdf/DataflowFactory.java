@@ -11,5 +11,9 @@ public class DataflowFactory {
 	public InputStream getData(String dataset) {
 		return DataflowFactory.class.getResourceAsStream("/" + dataset + "/" + dataset + "_data.xml");
 	}
+	
+	public InputStream getDataflow(String dataset) {
+		return DataflowFactory.class.getResourceAsStream("/" + dataset + "/" + dataset + "_dataflow.xml");
+	}
 
 }

@@ -7,6 +7,8 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.sdmxsource.sdmx.api.constants.SDMX_STRUCTURE_TYPE;
 import org.sdmxsource.sdmx.api.model.beans.base.SDMXBean;
+import org.sdmxsource.sdmx.api.model.header.DatasetHeaderBean;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.hp.hpl.jena.rdf.model.Model;
@@ -15,7 +17,14 @@ import com.hp.hpl.jena.rdf.model.Resource;
 @Service
 public class ConverterFactory {
 
+	@Autowired
+	protected DatasetHeaderConverter datasetHeaderConverter;
+	
+	@Autowired
+	protected ObservationConverter observationConverter;
+	
 	protected Map<SDMX_STRUCTURE_TYPE, Converter<? extends SDMXBean>> converterMap = new HashMap<SDMX_STRUCTURE_TYPE, Converter<? extends SDMXBean>>();
+
 	protected final Log logger = LogFactory.getLog(this.getClass());
 
 	public Converter getConverter(SDMX_STRUCTURE_TYPE beanType) {
@@ -29,6 +38,15 @@ public class ConverterFactory {
 
 	public Converter getConverter(SDMXBean bean) {
 		return getConverter(bean.getStructureType());
+	}
+	
+	// hack: instantiate converter for the dataset header bean
+	public DatasetHeaderConverter getDatasetHeaderConverter() {
+		return datasetHeaderConverter;
+	}
+	
+	public ObservationConverter getObservationConverter() {
+		return observationConverter;
 	}
 
 	public Resource convert(SDMXBean bean, Model model) {

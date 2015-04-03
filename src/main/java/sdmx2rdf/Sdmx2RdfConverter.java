@@ -20,6 +20,8 @@ import org.sdmxsource.sdmx.api.model.beans.SdmxBeans;
 import org.sdmxsource.sdmx.api.model.beans.base.MaintainableBean;
 import org.sdmxsource.sdmx.api.model.beans.datastructure.DataStructureBean;
 import org.sdmxsource.sdmx.api.model.data.KeyValue;
+import org.sdmxsource.sdmx.api.model.data.Observation;
+import org.sdmxsource.sdmx.api.model.header.DatasetHeaderBean;
 import org.sdmxsource.sdmx.api.util.ReadableDataLocation;
 import org.sdmxsource.sdmx.dataparser.manager.DataReaderManager;
 import org.sdmxsource.sdmx.structureretrieval.manager.InMemoryRetrievalManager;
@@ -30,6 +32,7 @@ import sdmx2rdf.converter.ConverterFactory;
 
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
+import com.hp.hpl.jena.rdf.model.Resource;
 
 @Component
 public class Sdmx2RdfConverter {
@@ -53,13 +56,21 @@ public class Sdmx2RdfConverter {
 
 	private static final Log logger = LogFactory.getLog(TestSdmxFactory.class);
 
-	public void parse(InputStream structuresInputStream, InputStream dataInputStream) {
+	public void parse(InputStream structuresInputStream, InputStream dataInputStream, InputStream dataflowInputStream) {
 		SdmxBeans beans = null;
-		// first read structures
+		SdmxBeans dataflowBeans = null;
+				
 		if (structuresInputStream != null) {
 			ReadableDataLocation srdl = rdlFactory.getReadableDataLocation(structuresInputStream);
 			StructureWorkspace workspace = structureParsingManager.parseStructures(srdl);
 			beans = workspace.getStructureBeans(true);
+			
+			if (dataflowInputStream != null) {
+				ReadableDataLocation dataflowLocation = rdlFactory.getReadableDataLocation(dataflowInputStream);
+				StructureWorkspace dataflowWorkspace = structureParsingManager.parseStructures(dataflowLocation);
+				
+				dataflowBeans = dataflowWorkspace.getStructureBeans(true);
+			}
 
 			for (MaintainableBean bean : beans.getAllMaintainables()) {
 				SDMX_STRUCTURE_TYPE beanType = bean.getStructureType();
@@ -70,19 +81,24 @@ public class Sdmx2RdfConverter {
 
 		// read data
 		if (dataInputStream != null) {
+			//beans.merge(dataflowBeans);
 			SdmxBeanRetrievalManager retreivalManager = new InMemoryRetrievalManager(beans);
 			ReadableDataLocation drdl = rdlFactory.getReadableDataLocation(dataInputStream);
 			DataReaderEngine dre = dataReaderManager.getDataReaderEngine(drdl, retreivalManager);
+		
 
+			// hack sa vedem ca merge
+			Resource dataset = model.createResource();
 			while (dre.moveNextDataset()) {
 				List<KeyValue> dataSetAttributes = dre.getDatasetAttributes();
-				dre.getCurrentDatasetHeaderBean();
-				DataStructureBean dsd = dre.getDataStructure();
-				logger.info(dsd.getId());
+				dre.getCurrentDatasetHeaderBean();				
+				
 				while (dre.moveNextKeyable()) {
 					dre.getCurrentKey();
+					dre.getDataStructure();
 					while (dre.moveNextObservation()) {
-						dre.getCurrentObservation();
+						Observation obs = dre.getCurrentObservation();
+						converterFactory.getObservationConverter().convert(dataset, obs, model);
 					}
 				}
 			}

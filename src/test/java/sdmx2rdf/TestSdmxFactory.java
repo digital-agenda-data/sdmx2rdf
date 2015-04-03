@@ -10,8 +10,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.sdmxsource.sdmx.api.factory.ReadableDataLocationFactory;
 import org.sdmxsource.sdmx.api.factory.WriteableDataLocationFactory;
-import org.sdmxsource.sdmx.api.manager.parse.StructureParsingManager;
-import org.sdmxsource.sdmx.dataparser.manager.DataReaderManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -50,21 +48,12 @@ public class TestSdmxFactory {
 	private DataflowFactory dataflowFactory;
 
 	@Autowired
-	private ReadableDataLocationFactory rdlFactory;
-
-	@Autowired
-	private StructureParsingManager structureParsingManager;
-
-	@Autowired
-	private DataReaderManager dataReaderManager;
-
-	@Autowired
 	private Sdmx2Rdf sdmx2rdf;
 
 	@Autowired
-	URIFactory uriManager;
+	private URIFactory uriFactory;
 
-	private static final Log logger = LogFactory.getLog(TestSdmxFactory.class);
+	private final Log logger = LogFactory.getLog(getClass());
 
 	@Test
 	public void test1() throws IOException {
@@ -88,17 +77,12 @@ public class TestSdmxFactory {
 	}
 
 	public void testURIMapper() {
-		logger.info(uriManager
-				.getURI("urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:DSD_isoc_ic_biski(1.0)"));
-		logger.info(uriManager
-				.getURI("urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=ESTAT:DSD_isoc_ic_biski(1.0).FREQ"));
-		logger.info(uriManager
-				.getURI("urn:sdmx:org.sdmx.infomodel.datastructure.TimeDimension=ESTAT:DSD_isoc_ic_biski(1.0).TIME_PERIOD"));
-		logger.info(uriManager.getURI("urn:sdmx:org.sdmx.infomodel.codelist.Codelist=ESTAT:CL_INDIC_IS(1.0)"));
-		logger.info(uriManager.getURI("urn:sdmx:org.sdmx.infomodel.codelist.Code=ESTAT:CL_INDIC_IS(1.0).IC_SK"));
-		logger.info(uriManager
-				.getURI("urn:sdmx:org.sdmx.infomodel.conceptscheme.ConceptScheme=ESTAT:CS_DSD_isoc_ic_biski(1.0)"));
-		logger.info(uriManager
-				.getURI("urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=ESTAT:CS_DSD_isoc_ic_biski(1.0).FREQ"));
+		logger.info(uriFactory.getURI("urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=ESTAT:DSD_isoc_ic_biski(1.0)"));
+		logger.info(uriFactory.getURI("urn:sdmx:org.sdmx.infomodel.datastructure.Dimension=ESTAT:DSD_isoc_ic_biski(1.0).FREQ"));
+		logger.info(uriFactory.getURI("urn:sdmx:org.sdmx.infomodel.datastructure.TimeDimension=ESTAT:DSD_isoc_ic_biski(1.0).TIME_PERIOD"));
+		logger.info(uriFactory.getURI("urn:sdmx:org.sdmx.infomodel.codelist.Codelist=ESTAT:CL_INDIC_IS(1.0)"));
+		logger.info(uriFactory.getURI("urn:sdmx:org.sdmx.infomodel.codelist.Code=ESTAT:CL_INDIC_IS(1.0).IC_SK"));
+		logger.info(uriFactory.getURI("urn:sdmx:org.sdmx.infomodel.conceptscheme.ConceptScheme=ESTAT:CS_DSD_isoc_ic_biski(1.0)"));
+		logger.info(uriFactory.getURI("urn:sdmx:org.sdmx.infomodel.conceptscheme.Concept=ESTAT:CS_DSD_isoc_ic_biski(1.0).FREQ"));
 	}
 }

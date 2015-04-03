@@ -35,15 +35,7 @@ public class ConceptSchemeConverter extends AbstractConverter<ConceptSchemeBean>
 		}
 		
 		for (ConceptBean conceptBean : bean.getItems()) {
-			Resource conceptResource = model.createResource(uriFactory.getURI(conceptBean.getUrn()));
-			conceptResource.addProperty(RDF.type, Skos.Concept);
-			conceptResource.addProperty(Skos.notation, conceptBean.getId());
-			conceptResource.addProperty(Skos.prefLabel, conceptBean.getName());
-			conceptResource.addProperty(RDFS.label, conceptBean.getName());
-			if ( conceptBean.getDescription() != null ) {
-				conceptResource.addProperty(Skos.definition, conceptBean.getDescription());
-			}
-			conceptResource.addProperty(RDFS.label, conceptBean.getName());
+			Resource conceptResource = converterFactory.convert(conceptBean, model);
 			conceptResource.addProperty(Skos.inScheme, conceptScheme);
 			conceptScheme.addProperty(Skos.hasTopConcept, conceptResource);
 		}

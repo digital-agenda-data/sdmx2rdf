@@ -59,7 +59,7 @@ public class TestSdmxFactory {
 	private DataReaderManager dataReaderManager;
 
 	@Autowired
-	private Sdmx2RdfConverter mainConverter;
+	private Sdmx2Rdf sdmx2rdf;
 
 	@Autowired
 	URIFactory uriManager;
@@ -70,20 +70,20 @@ public class TestSdmxFactory {
 	public void test1() throws IOException {
 		String dataset = "isoc_ic_biski";
 
-		mainConverter.parse(
+		sdmx2rdf.parse(
 				new InputStream[] { dataflowFactory.getDataflow(dataset), dataflowFactory.getDSD(dataset) },
 				dataflowFactory.getData(dataset));
 
 		FileOutputStream out = new FileOutputStream(dataset + ".rdf");
-		mainConverter.writeTo(out);
+		sdmx2rdf.writeTo(out);
 		out.close();
 	}
 
 	public void test2() throws IOException {
 		InputStream inputStream = this.getClass().getResourceAsStream("/sdmx_test/sdmx_test.xml");
-		mainConverter.parse(new InputStream[] { inputStream }, null);
+		sdmx2rdf.parse(new InputStream[] { inputStream }, null);
 		FileOutputStream out = new FileOutputStream("sdmx_test.rdf");
-		mainConverter.writeTo(out);
+		sdmx2rdf.writeTo(out);
 		out.close();
 	}
 

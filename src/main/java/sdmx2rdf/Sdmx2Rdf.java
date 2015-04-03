@@ -33,7 +33,7 @@ import com.hp.hpl.jena.rdf.model.ModelFactory;
 import com.hp.hpl.jena.rdf.model.Resource;
 
 @Component
-public class Sdmx2RdfConverter {
+public class Sdmx2Rdf {
 
 	@Autowired
 	private ReadableDataLocationFactory rdlFactory;

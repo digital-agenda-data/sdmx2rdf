@@ -11,7 +11,10 @@ import org.sdmxsource.sdmx.api.model.beans.base.MaintainableBean;
 import org.sdmxsource.sdmx.api.model.beans.base.SDMXBean;
 import org.sdmxsource.sdmx.api.model.beans.codelist.CodeBean;
 import org.sdmxsource.sdmx.api.model.beans.codelist.CodelistBean;
+import org.sdmxsource.sdmx.api.model.beans.conceptscheme.ConceptBean;
+import org.sdmxsource.sdmx.api.model.beans.conceptscheme.ConceptSchemeBean;
 import org.sdmxsource.sdmx.api.model.beans.datastructure.AttributeBean;
+import org.sdmxsource.sdmx.api.model.beans.datastructure.AttributeListBean;
 import org.sdmxsource.sdmx.api.model.beans.datastructure.DataStructureBean;
 import org.sdmxsource.sdmx.api.model.beans.datastructure.DimensionBean;
 import org.sdmxsource.sdmx.api.model.beans.datastructure.PrimaryMeasureBean;
@@ -72,14 +75,11 @@ public class SdmxDataStructureDefinitionConverter {
 				PrimaryMeasureBean primaryMeasure = bean.getMeasureList().getPrimaryMeasure();
 				parsePrimaryMeasure(primaryMeasure);
 				
-				
 				// TODO(catalinb): attributes
-				for (AttributeBean attribute : bean.getAttributeList().getAttributes()) {
-					System.out.println("Attribute: " + attribute);
-				}
+				parseAttributeBean(bean.getAttributeList());
 				
 			} else if (structureType == SDMX_STRUCTURE_TYPE.CONCEPT_SCHEME) {
-				System.out.println("CONCEPT SCHEME");
+				parseConceptScheme((ConceptSchemeBean) currentMaintainable);
 			} else {
 				System.out.println("UNKOWN: " + structureType);	
 				Resource component = model.createResource(dsdResource.getURI() + "unknown/" + currentMaintainable.hashCode());
@@ -88,17 +88,97 @@ public class SdmxDataStructureDefinitionConverter {
 		}
 	}
 	
+	private void parseConceptScheme(ConceptSchemeBean bean) {
+
+		Resource conceptScheme = model.createResource(dsdResource.getURI() + "def/scheme/" + bean.getId());
+		// TODO(catalinb): do we need other properties?
+		conceptScheme.addProperty(RDF.type, Skos.ConceptScheme);
+		
+		for (ConceptBean conceptBean : bean.getItems()) {
+			Resource conceptResource = model.createResource(dsdResource.getURI() + "def/concept/" + conceptBean.getId());
+			conceptResource.addProperty(RDF.type, Skos.Concept);
+			conceptResource.addProperty(RDF.type, Sdmx.IdentityRole);
+			conceptResource.addProperty(RDF.type, Sdmx.Concept);
+			
+			conceptResource.addProperty(RDFS.label, conceptBean.getName());
+			if (conceptBean.getDescription() != null) {
+				conceptResource.addProperty(RDFS.comment, conceptBean.getDescription());
+			}
+			
+			conceptResource.addProperty(Skos.inScheme, conceptScheme);
+			conceptScheme.addProperty(Skos.hasTopConcept, conceptResource);
+		}
+		
+		dsdResource.addProperty(Cube.component, conceptScheme);
+	}
+	
+	private void parseAttributeBean(AttributeListBean attributeListBean) {
+		/*
+		<qb:component>
+		<qb:ComponentSpecification rdf:about="http://semantic.digital-agenda-data.eu/def/dsd/scoreboard/attribute/flag">
+			<qb:attribute>
+				<!-- Flag property -->
+				<rdf:Description rdf:about="http://semantic.digital-agenda-data.eu/def/property/flag">
+					<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+					<rdf:type rdf:resource="http://purl.org/linked-data/cube#AttributeProperty"/>
+					<rdf:type rdf:resource="http://purl.org/linked-data/cube#CodedProperty"/>
+					<rdfs:label xml:lang="en">Flag</rdfs:label>
+					<rdfs:comment xml:lang="en">Values from Eurostat codelist: http://eurostat.linked-statistics.org/dic/flags</rdfs:comment>
+					<skos:notation>flag</skos:notation>
+					<skos:inScheme rdf:resource="http://semantic.digital-agenda-data.eu/def/scheme"/>
+					<qb:concept>
+						<rdf:Description rdf:about="http://semantic.digital-agenda-data.eu/def/concept/flag">
+							<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+							<rdf:type rdf:resource="http://purl.org/linked-data/sdmx#Concept"/>
+							<rdf:type rdf:resource="http://purl.org/linked-data/sdmx#ConceptRole"/>
+							<rdfs:label xml:lang="en">Flag</rdfs:label>
+							<rdfs:comment xml:lang="en">Optional flag for the measured value</rdfs:comment>
+							<skos:inScheme rdf:resource="http://semantic.digital-agenda-data.eu/def/scheme"/>
+							<rdfs:seeAlso rdf:resource="http://semantic.digital-agenda-data.eu/def/property/flag"/>	
+						</rdf:Description>
+					</qb:concept>
+					<qb:codeList rdf:resource="http://eurostat.linked-statistics.org/dic/flags"/>
+				</rdf:Description>
+			</qb:attribute>
+		</qb:ComponentSpecification>
+	</qb:component>
+	<qb:component>
+	*/
+		for (AttributeBean attributeBean : attributeListBean.getAttributes()) {
+			Resource componentSpecification = model.createResource(dsdResource.getURI() + "def/attribute/" + attributeBean.getId());
+			componentSpecification.addProperty(RDF.type, Cube.ComponentSpecification);
+			
+			Resource property = model.createResource(dsdResource.getURI() + "def/property/" + attributeBean.getId());
+			property.addProperty(RDF.type, RDF.Property);
+			property.addProperty(RDF.type, Cube.AttributeProperty);
+			if (attributeBean.hasCodedRepresentation()) {
+				property.addProperty(RDF.type, Cube.CodedProperty);
+				
+				//CrossReferenceBean codelist = property.getRepresentation().getRepresentation();
+				Resource codelistRdf = model.createResource();
+			} else {
+				// TODO is there a Cube.TextProperty?
+			}
+			
+			CrossReferenceBean concept = attributeBean.getConceptRef();
+			Resource conceptRdf = model.createResource(dsdResource.getURI() + "def/concept/" + concept.getFullId());
+			property.addProperty(Cube.concept, conceptRdf);
+			
+			componentSpecification.addProperty(Cube.attribute, property);
+			dsdResource.addProperty(Cube.component, componentSpecification);
+		}
+	}
+	
 	private void parsePrimaryMeasure(PrimaryMeasureBean primaryMeasure) {
 		Resource componentSpecification  = model.createResource(dsdResource.getURI() + "measure/");
 		componentSpecification.addProperty(RDF.type, Cube.ComponentSpecification);
-		
 		Resource measureRdf = model.createResource(dsdResource.getURI() + "measure/" + primaryMeasure.getId());
 		measureRdf.addProperty(RDF.type, Cube.MeasureProperty);
 		measureRdf.addProperty(RDF.type, RDF.Property);
 		
 		// TODO(catalinb): better resourceGetter
 		CrossReferenceBean concept = primaryMeasure.getConceptRef();
-		Resource conceptRdf = model.createResource(dsdResource.getURI() + "concept/" + concept.getFullId());
+		Resource conceptRdf = model.createResource(dsdResource.getURI() + "def/concept/" + concept.getFullId());
 		
 		measureRdf.addProperty(Cube.concept, conceptRdf);
 		
@@ -115,7 +195,7 @@ public class SdmxDataStructureDefinitionConverter {
 		dimensionRdf.addProperty(RDF.type, Cube.DimensionProperty);
 		
 		CrossReferenceBean concept = dimension.getConceptRef();
-		Resource conceptRdf = model.createResource(dsdResource.getURI() + "concept/" + concept.getFullId());
+		Resource conceptRdf = model.createResource(dsdResource.getURI() + "def/concept/" + concept.getFullId());
 		
 
 		conceptRdf.addProperty(RDF.type, Skos.Concept);

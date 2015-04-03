@@ -3,6 +3,7 @@ package sdmx2rdf;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.text.MessageFormat;
+import java.util.List;
 import java.util.Map.Entry;
 
 import javax.annotation.PostConstruct;
@@ -18,18 +19,17 @@ import org.sdmxsource.sdmx.api.model.StructureWorkspace;
 import org.sdmxsource.sdmx.api.model.beans.SdmxBeans;
 import org.sdmxsource.sdmx.api.model.beans.base.MaintainableBean;
 import org.sdmxsource.sdmx.api.model.beans.datastructure.DataStructureBean;
+import org.sdmxsource.sdmx.api.model.data.KeyValue;
 import org.sdmxsource.sdmx.api.util.ReadableDataLocation;
 import org.sdmxsource.sdmx.dataparser.manager.DataReaderManager;
 import org.sdmxsource.sdmx.structureretrieval.manager.InMemoryRetrievalManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import sdmx2rdf.converter.Converter;
 import sdmx2rdf.converter.ConverterFactory;
 
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
-import com.hp.hpl.jena.rdf.model.Resource;
 
 @Component
 public class Sdmx2RdfConverter {
@@ -75,6 +75,8 @@ public class Sdmx2RdfConverter {
 			DataReaderEngine dre = dataReaderManager.getDataReaderEngine(drdl, retreivalManager);
 
 			while (dre.moveNextDataset()) {
+				List<KeyValue> dataSetAttributes = dre.getDatasetAttributes();
+				dre.getCurrentDatasetHeaderBean();
 				DataStructureBean dsd = dre.getDataStructure();
 				logger.info(dsd.getId());
 				while (dre.moveNextKeyable()) {

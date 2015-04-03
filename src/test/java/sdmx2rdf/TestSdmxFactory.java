@@ -20,8 +20,6 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.support.AnnotationConfigContextLoader;
 
-import sdmx.converter.URIMapper;
-
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(loader = AnnotationConfigContextLoader.class)
 public class TestSdmxFactory {
@@ -71,8 +69,8 @@ public class TestSdmxFactory {
 	public void test1() throws IOException {
 		String dataset = "isoc_ic_biski";
 
-		//mainConverter.parse(dataflowFactory.getDSD(dataset), dataflowFactory.getData(dataset));
-		mainConverter.parse(dataflowFactory.getDSD(dataset), null);
+		mainConverter.parse(dataflowFactory.getDSD(dataset), dataflowFactory.getData(dataset));
+		//mainConverter.parse(dataflowFactory.getDSD(dataset), null);
 		
 		FileOutputStream out = new FileOutputStream(dataset + ".rdf");
 		mainConverter.writeTo(out);

@@ -20,48 +20,61 @@ public class AttributeConverter extends AbstractConverter<AttributeBean> {
 	protected SDMX_STRUCTURE_TYPE getStructureType() {
 		return SDMX_STRUCTURE_TYPE.DATA_ATTRIBUTE;
 	}
-	
+
 	@Override
 	public Resource convert(AttributeBean bean, Model model) {
-			// returns a qb:ComponentSpecification
-			logger.debug("Converting " + bean);
+		// returns a qb:ComponentSpecification
+		logger.debug("Converting " + bean);
 
-			String attributeUri = uriFactory.getURI(bean.getUrn());
-			Resource componentSpecification = model.createResource(attributeUri + "/qbcomponent");
-			componentSpecification.addProperty(RDF.type, Cube.ComponentSpecification);
-			if ("Mandatory".equals(bean.getAssignmentStatus())) {
-				componentSpecification.addLiteral(Cube.componentRequired, true);
-			} else {
-				componentSpecification.addLiteral(Cube.componentRequired, false);
-			}
+		String attributeUri = uriFactory.getURI(bean.getUrn());
+		Resource componentSpecification = model.createResource(attributeUri + "/qbcomponent");
+		componentSpecification.addProperty(RDF.type, Cube.ComponentSpecification);
+		if ("Mandatory".equals(bean.getAssignmentStatus())) {
+			componentSpecification.addLiteral(Cube.componentRequired, true);
+		} else {
+			componentSpecification.addLiteral(Cube.componentRequired, false);
+		}
 
-			Resource attributeProperty = model.createResource(attributeUri);
-			componentSpecification.addProperty(Cube.attribute, attributeProperty);
+		Resource attributeProperty = model.createResource(attributeUri);
+		componentSpecification.addProperty(Cube.attribute, attributeProperty);
 
-			attributeProperty.addProperty(RDF.type, RDF.Property);
-			attributeProperty.addProperty(RDF.type, Cube.AttributeProperty);
-			attributeProperty.addProperty(Skos.notation, bean.getId());
-			attributeProperty.addProperty(Skos.prefLabel, bean.getId());
-			attributeProperty.addProperty(RDFS.label, bean.getId());
+		attributeProperty.addProperty(RDF.type, RDF.Property);
+		attributeProperty.addProperty(RDF.type, Cube.AttributeProperty);
+		attributeProperty.addProperty(Skos.notation, bean.getId());
+		attributeProperty.addProperty(Skos.prefLabel, bean.getId());
+		attributeProperty.addProperty(RDFS.label, bean.getId());
 
-			CrossReferenceBean conceptRef = bean.getConceptRef();
-			if (conceptRef != null) {
-				logger.debug("Concept: " + conceptRef);
-				Resource conceptRdf = model.createResource(uriFactory.getURI(conceptRef.getTargetUrn()));
-				attributeProperty.addProperty(Cube.concept, conceptRdf);
-			}
+		CrossReferenceBean conceptRef = bean.getConceptRef();
+		if (conceptRef != null) {
+			logger.debug("Concept: " + conceptRef);
+			Resource conceptRdf = model.createResource(uriFactory.getURI(conceptRef.getTargetUrn()));
+			attributeProperty.addProperty(Cube.concept, conceptRdf);
+		}
 
-			if (bean.hasCodedRepresentation()) {
-				CrossReferenceBean codelist = bean.getRepresentation().getRepresentation();
-				Resource referencedCodelistRdf = model.createResource(uriFactory.getURI(codelist.getTargetUrn()));
-				attributeProperty.addProperty(Cube.codeList, referencedCodelistRdf);
-			} else {
-				logger.warn("Representation type:" + bean.getRepresentation().getTextFormat().getTextType());
-				// TODO(catalinb): handle non coded representation
-			}
-			
-			// TODO: does AttributeRelationship has a correspondent in qb ?
-			return componentSpecification;
+		if (bean.hasCodedRepresentation()) {
+			CrossReferenceBean codelist = bean.getRepresentation().getRepresentation();
+			Resource referencedCodelistRdf = model.createResource(uriFactory.getURI(codelist.getTargetUrn()));
+			attributeProperty.addProperty(Cube.codeList, referencedCodelistRdf);
+		} else {
+			logger.warn("Representation type:" + bean.getRepresentation().getTextFormat().getTextType());
+			// TODO(catalinb): handle non coded representation
+		}
+
+		switch (bean.getAttachmentLevel()) {
+		case DATA_SET:
+			componentSpecification.addProperty(Cube.componentAttachment, Cube.DataSet);
+			break;
+		case GROUP:
+
+			// TODO
+			break;
+		case OBSERVATION:
+			break;
+		case DIMENSION_GROUP:
+			bean.getDimensionReferences();
+			break;
+		}
+		// TODO: does AttributeRelationship has a correspondent in qb ?
+		return componentSpecification;
 	}
-
 }

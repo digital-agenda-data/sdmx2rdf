@@ -8,6 +8,7 @@ import org.sdmxsource.sdmx.api.model.beans.datastructure.PrimaryMeasureBean;
 import org.springframework.stereotype.Service;
 
 import sdmx.converter.Cube;
+import sdmx.converter.Sdmx;
 
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.Resource;
@@ -29,7 +30,8 @@ public class DSDConverter extends AbstractConverter<DataStructureBean> {
 		Resource dsdResource = model.createResource(uriFactory.getURI(bean.getUrn()));
 		//dsdResource.addProperty(RDF.type, Sdmx.DataStructureDefinition);
 		dsdResource.addProperty(RDF.type, Cube.DataStructureDefinition);
-		
+		dsdResource.addProperty(RDF.type, Sdmx.DataStructureDefinition);
+
 		for (DimensionBean dimension : bean.getDimensionList().getDimensions()) {
 			Resource componentSpecification = converterFactory.convert(dimension, model);
 			if ( componentSpecification != null ) {

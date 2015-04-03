@@ -27,39 +27,38 @@ public class DimensionConverter extends AbstractConverter<DimensionBean> {
 	public Resource convert(DimensionBean bean, Model model) {
 		// returns a qb:ComponentSpecification
 		logger.debug("Converting " + bean);
-		DimensionBean dimensionBean = (DimensionBean) bean;
 
-		String dimensionUri = uriFactory.getURI(dimensionBean.getUrn());
+		String dimensionUri = uriFactory.getURI(bean.getUrn());
 		Resource componentSpecification = model.createResource(dimensionUri + "/qbcomponent");
 		componentSpecification.addProperty(RDF.type, Cube.ComponentSpecification);
 
 		Resource dimensionProperty = model.createResource(dimensionUri);
 		componentSpecification.addProperty(Cube.dimension, dimensionProperty);
-		componentSpecification.addLiteral(Cube.order, dimensionBean.getPosition());
+		componentSpecification.addLiteral(Cube.order, bean.getPosition());
 		// IC-6 The only components of a qb:DataStructureDefinition that may be marked as optional, using qb:componentRequired are attributes.
 		componentSpecification.addLiteral(Cube.componentRequired, true);
 
 		dimensionProperty.addProperty(RDF.type, RDF.Property);
 		dimensionProperty.addProperty(RDF.type, Cube.DimensionProperty);
-		dimensionProperty.addProperty(Skos.notation, dimensionBean.getId());
-		dimensionProperty.addProperty(Skos.prefLabel, dimensionBean.getId());
-		dimensionProperty.addProperty(RDFS.label, dimensionBean.getId());
+		dimensionProperty.addProperty(Skos.notation, bean.getId());
+		dimensionProperty.addProperty(Skos.prefLabel, bean.getId());
+		dimensionProperty.addProperty(RDFS.label, bean.getId());
 
-		CrossReferenceBean conceptRef = dimensionBean.getConceptRef();
+		CrossReferenceBean conceptRef = bean.getConceptRef();
 		if (conceptRef != null) {
 			Resource conceptRdf = model.createResource(uriFactory.getURI(conceptRef.getTargetUrn()));
 			dimensionProperty.addProperty(Cube.concept, conceptRdf);
 		}
 
-		if (dimensionBean.hasCodedRepresentation()) {
-			CrossReferenceBean codelist = dimensionBean.getRepresentation().getRepresentation();
+		if (bean.hasCodedRepresentation()) {
+			CrossReferenceBean codelist = bean.getRepresentation().getRepresentation();
 			Resource referencedCodelistRdf = model.createResource(uriFactory.getURI(codelist.getTargetUrn()));
 			dimensionProperty.addProperty(Cube.codeList, referencedCodelistRdf);
 			// IC-5. Concept dimensions have code lists
 			dimensionProperty.addProperty(RDFS.range, Skos.Concept);
 		} else {
 			// IC-4 Every dimension declared in a qb:DataStructureDefinition must have a declared rdfs:range
-			TextFormatBean textFormatBean = dimensionBean.getRepresentation().getTextFormat();
+			TextFormatBean textFormatBean = bean.getRepresentation().getTextFormat();
 			Resource xsdFormatResource = null;
 			if (textFormatBean != null) {
 				// convert between TextTypeType.* to rdfs

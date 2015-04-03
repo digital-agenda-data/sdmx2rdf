@@ -27,7 +27,7 @@ public class TestSdmxFactory {
 
 	@Configuration
 	@EnableSpringConfigured
-	@ComponentScan({ "org.sdmxsource", "sdmx.converter", "sdmx2rdf" })
+	@ComponentScan({ "org.sdmxsource", "sdmx2rdf" })
 	static class ContextConfiguration {
 
 		@Bean

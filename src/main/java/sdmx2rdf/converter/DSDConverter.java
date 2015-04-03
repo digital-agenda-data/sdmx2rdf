@@ -14,7 +14,6 @@ import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.vocabulary.RDF;
 
-
 @Service
 public class DSDConverter extends AbstractConverter<DataStructureBean> {
 
@@ -25,7 +24,7 @@ public class DSDConverter extends AbstractConverter<DataStructureBean> {
 
 	@Override
 	public Resource convert(DataStructureBean bean, Model model) {
-		//returns a qb:DataStructureDefinition
+		// returns a qb:DataStructureDefinition
 		logger.debug("Converting " + bean);
 		Resource dsdResource = model.createResource(uriFactory.getURI(bean.getUrn()));
 		dsdResource.addProperty(RDF.type, Sdmx.DataStructureDefinition);
@@ -33,21 +32,22 @@ public class DSDConverter extends AbstractConverter<DataStructureBean> {
 
 		for (DimensionBean dimension : bean.getDimensionList().getDimensions()) {
 			Resource componentSpecification = converterFactory.convert(dimension, model);
-			if ( componentSpecification != null ) {
+			if (componentSpecification != null) {
 				dsdResource.addProperty(Cube.component, componentSpecification);
 			}
 		}
-		
-		for (AttributeBean attribute : bean.getAttributeList().getAttributes()) {
-			Resource componentSpecification = converterFactory.convert(attribute, model);
-			if ( componentSpecification != null ) {
-				dsdResource.addProperty(Cube.component, componentSpecification);
+		if (bean.getAttributeList() != null) {
+			for (AttributeBean attribute : bean.getAttributeList().getAttributes()) {
+				Resource componentSpecification = converterFactory.convert(attribute, model);
+				if (componentSpecification != null) {
+					dsdResource.addProperty(Cube.component, componentSpecification);
+				}
 			}
 		}
-		
+
 		PrimaryMeasureBean primaryMeasure = bean.getMeasureList().getPrimaryMeasure();
 		Resource componentSpecification = converterFactory.convert(primaryMeasure, model);
-		if ( componentSpecification != null ) {
+		if (componentSpecification != null) {
 			dsdResource.addProperty(Cube.component, componentSpecification);
 		}
 		return dsdResource;

@@ -15,27 +15,6 @@ import com.hp.hpl.jena.rdf.model.Resource;
 @Service
 public class ConverterFactory {
 
-//	@Autowired
-//	DSDConverter dsdConverter;
-//
-//	@Autowired
-//	CodeListConverter codeListConverter;
-//
-//	@Autowired
-//	ConceptSchemeConverter conceptSchemeConverter;
-//
-//	@Autowired
-//	DimensionConverter dimensionConverter;
-//
-//	@Autowired
-//	AttributeConverter attributeConverter;
-//
-//	@Autowired
-//	MeasureConverter measureConverter;
-//
-//	@Autowired
-//	TextFormatConverter textFormatConverter;
-
 	protected Map<SDMX_STRUCTURE_TYPE, Converter<? extends SDMXBean>> converterMap = new HashMap<SDMX_STRUCTURE_TYPE, Converter<? extends SDMXBean>>();
 	protected final Log logger = LogFactory.getLog(this.getClass());
 
@@ -44,27 +23,6 @@ public class ConverterFactory {
 		if ( converter != null ) {
 			return converter;
 		}
-/*
-		switch (beanType) {
-		case DSD:
-			return dsdConverter;
-		case CODE_LIST:
-			return codeListConverter;
-		case CONCEPT_SCHEME:
-			return conceptSchemeConverter;
-		case TIME_DIMENSION:
-		case DIMENSION:
-			return dimensionConverter;
-		case DATA_ATTRIBUTE:
-			return attributeConverter;
-		case MEASURE_DIMENSION:
-		case PRIMARY_MEASURE:
-			return measureConverter;
-		case TEXT_FORMAT:
-			return textFormatConverter;
-		default:
-		}
-		*/
 		logger.warn("Converter not found for bean type " + beanType);
 		return null;
 	}

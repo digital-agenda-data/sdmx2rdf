@@ -54,17 +54,19 @@ public class Sdmx2RdfConverter {
 
 	private static final Log logger = LogFactory.getLog(TestSdmxFactory.class);
 
-	public void parse(InputStream dataflowInputStream, InputStream structuresInputStream, InputStream dataInputStream) {
+	public void parse(InputStream[] structuresInputStreams, InputStream dataInputStream) {
 		SdmxBeans beans = null;
 
-		ReadableDataLocation dataflowLocation = rdlFactory.getReadableDataLocation(dataflowInputStream);
-		StructureWorkspace dataflowWorkspace = structureParsingManager.parseStructures(dataflowLocation);
-		beans = dataflowWorkspace.getStructureBeans(true);
+		for (InputStream structureInputStream : structuresInputStreams) {
+			ReadableDataLocation dataLocation = rdlFactory.getReadableDataLocation(structureInputStream);
+			StructureWorkspace workspace = structureParsingManager.parseStructures(dataLocation);
+			if ( beans == null ) {
+				beans = workspace.getStructureBeans(true);
+			} else {
+				beans.merge(workspace.getStructureBeans(true));
+			}
+		}
 		SdmxBeanRetrievalManager retreivalManager = new InMemoryRetrievalManager(beans);
-
-		ReadableDataLocation srdl = rdlFactory.getReadableDataLocation(structuresInputStream);
-		StructureWorkspace workspace = structureParsingManager.parseStructures(srdl);
-		beans.merge(workspace.getStructureBeans(true));
 
 		Map<String, Resource> datasetMap = new HashMap<String, Resource>();
 		Map<String, Resource> dsdMap = new HashMap<String, Resource>();

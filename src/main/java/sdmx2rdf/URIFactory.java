@@ -61,7 +61,9 @@ public class URIFactory {
 		if (prefix != null) {
 			return prefix;
 		}
-		return nsPrefixMap.get("defaultNS");
+		String defaultNS = "http://semantic.digital-agenda-data.eu/";
+		nsPrefixMap.put("dad", defaultNS);
+		return defaultNS;
 	}
 
 	@PostConstruct
@@ -75,6 +77,5 @@ public class URIFactory {
 		nsPrefixMap.put("dctypes", DCTypes.NS);
 		nsPrefixMap.put("foaf", FOAF.NS);
 		nsPrefixMap.put("estat", "http://ec.europa.eu/eurostat/");
-		nsPrefixMap.put("defaultNS", "http://semantic.digital-agenda-data.eu/");
 	}
 }

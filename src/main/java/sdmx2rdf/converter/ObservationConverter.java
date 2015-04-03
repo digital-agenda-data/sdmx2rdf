@@ -97,7 +97,7 @@ public class ObservationConverter {
 		// get primary measure
 		PrimaryMeasureBean primaryMeasureBean = dsd.getPrimaryMeasure();
 		Property measureProperty = model.createProperty(uriFactory.getURI(primaryMeasureBean.getUrn()));
-		Literal value = model.createTypedLiteral((Object)observation.getObservationValue());
+		Literal value = model.createTypedLiteral(observation.getObservationValue());
 		rdfObs.addProperty(measureProperty, value);
 		
 		return rdfObs;

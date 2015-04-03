@@ -7,7 +7,6 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.sdmxsource.sdmx.api.constants.SDMX_STRUCTURE_TYPE;
 import org.sdmxsource.sdmx.api.model.beans.base.SDMXBean;
-import org.sdmxsource.sdmx.api.model.header.DatasetHeaderBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,16 +23,16 @@ public class ConverterFactory {
 
 	protected final Log logger = LogFactory.getLog(this.getClass());
 
-	public Converter getConverter(SDMX_STRUCTURE_TYPE beanType) {
-		Converter converter = converterMap.get(beanType);
+	public Converter<? extends SDMXBean> getConverter(SDMX_STRUCTURE_TYPE beanType) {
+		Converter<? extends SDMXBean> converter = converterMap.get(beanType);
 		if ( converter != null ) {
 			return converter;
 		}
-		logger.warn("Converter not found for bean type " + beanType);
+		logger.error("Converter not found for bean type " + beanType);
 		return null;
 	}
 
-	public Converter getConverter(SDMXBean bean) {
+	public Converter<? extends SDMXBean> getConverter(SDMXBean bean) {
 		return getConverter(bean.getStructureType());
 	}
 	
@@ -46,7 +45,6 @@ public class ConverterFactory {
 		if (converter != null) {
 			return converter.convert(bean, model);
 		}
-		logger.warn("Converter not found for bean type " + bean.getStructureType());
 		return null;
 	}
 

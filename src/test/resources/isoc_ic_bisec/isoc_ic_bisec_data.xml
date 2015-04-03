@@ -1,0 +1,5442 @@
+<?xml version='1.0' encoding='utf-8'?>
+<message:GenericData xmlns:footer="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message/footer"
+xmlns:generic="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic"
+xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"
+xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+  <message:Header>
+    <message:ID>4972339efe447135282400825abee6e0</message:ID>
+    <message:Test>false</message:Test>
+    <message:Prepared>2015-04-03T20:43:07</message:Prepared>
+    <message:Sender id="ESTAT">
+      <common:Name xml:lang="en">Eurostat</common:Name>
+      <message:Timezone>+01:00</message:Timezone>
+    </message:Sender>
+    <message:Receiver id="RECEIVER" />
+    <message:Structure structureID="ESTAT_DSD_isoc_ic_bisec_1_0" dimensionAtObservation="TIME_PERIOD">
+      <common:Structure>
+        <Ref agencyID="ESTAT" id="DSD_isoc_ic_bisec" version="1.0" />
+      </common:Structure>
+    </message:Structure>
+    <message:DataSetAction>Append</message:DataSetAction>
+    <message:DataSetID>isoc_ic_bisec</message:DataSetID>
+  </message:Header>
+  <message:DataSet structureRef="ESTAT_DSD_isoc_ic_bisec_1_0">
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="D_ICT" />
+        <generic:Value id="GEO" value="AT" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="0.46" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="0.49" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="0.86" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="1.36" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="1.34" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="1.33" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="1.21" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="1.26" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="1.51" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="1.54" />
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="D_ICT" />
+        <generic:Value id="GEO" value="BE" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="0.49" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="0.7" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="0.83" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="0.83" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="0.84" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="0.85" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="0.83" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="0.97" />
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="D_ICT" />
+        <generic:Value id="GEO" value="BG" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="0.2" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="0.49" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="0.47" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="0.62" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="0.41" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="0.42" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="0.39" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="0.4" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="0.34" />
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="D_ICT" />
+        <generic:Value id="GEO" value="CY" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="0.03" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="D_ICT" />
+        <generic:Value id="GEO" value="CZ" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="1.21" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="1.09" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="1.37" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="1.14" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="1.18" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="1.05" />
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="D_ICT" />
+        <generic:Value id="GEO" value="DE" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="0.39" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="0.58" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="1.34" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="1.19" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="1.18" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="1.21" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="1.13" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="1.05" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="1.06" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="1.35" />
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="D_ICT" />
+        <generic:Value id="GEO" value="DK" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="0.67" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="0.64" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="0.6" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="0.57" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="0.76" />
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="D_ICT" />
+        <generic:Value id="GEO" value="EE" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="0.61" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="0.66" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="0.84" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="0.94" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="1.07" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="1.0" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="0.85" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="D_ICT" />
+        <generic:Value id="GEO" value="EL" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="0.04" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="0.18" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="0.16" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="0.23" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="0.28" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="D_ICT" />
+        <generic:Value id="GEO" value="ES" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="0.11" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="0.13" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="0.32" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="0.29" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="0.29" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="0.29" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="0.31" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="0.36" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="0.57" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="0.54" />
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="D_ICT" />
+        <generic:Value id="GEO" value="EU25" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="0.93" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="0.99" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="0.98" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="D_ICT" />
+        <generic:Value id="GEO" value="EU27" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="0.94" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="1.0" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="D_ICT" />
+        <generic:Value id="GEO" value="FI" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="1.43" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="3.37" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="5.33" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="4.38" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="4.27" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="4.33" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="5.27" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="4.98" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="5.85" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="5.7" />
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="D_ICT" />
+        <generic:Value id="GEO" value="FR" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="0.27" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="0.36" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="0.83" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="0.84" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="0.91" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="0.93" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="1.07" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="1.18" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="1.29" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="1.52" />
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="D_ICT" />
+        <generic:Value id="GEO" value="HU" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="1.69" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="1.79" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="1.83" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="2.57" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="2.99" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="2.73" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="2.8" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="1.67" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="2.1" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="1.98" />
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="D_ICT" />
+        <generic:Value id="GEO" value="IE" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="2.53" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="2.32" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="2.91" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="4.34" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="6.19" />
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="D_ICT" />
+        <generic:Value id="GEO" value="IT" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="0.28" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="0.31" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="0.66" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="0.64" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="0.65" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="0.68" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="0.72" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="0.7" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="0.8" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="0.93" />
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="D_ICT" />
+        <generic:Value id="GEO" value="LT" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="0.16" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="0.28" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="0.43" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="0.76" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="0.79" />
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="D_ICT" />
+        <generic:Value id="GEO" value="LU" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="D_ICT" />
+        <generic:Value id="GEO" value="LV" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="0.19" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="D_ICT" />
+        <generic:Value id="GEO" value="MT" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="D_ICT" />
+        <generic:Value id="GEO" value="NL" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="D_ICT" />
+        <generic:Value id="GEO" value="PL" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="0.35" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="0.39" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="0.6" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="0.63" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="0.63" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="0.65" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="0.76" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="0.84" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="0.74" />
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="D_ICT" />
+        <generic:Value id="GEO" value="PT" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="0.17" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="0.26" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="0.6" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="0.58" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="0.55" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="0.65" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="0.69" />
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="D_ICT" />
+        <generic:Value id="GEO" value="RO" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="0.27" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="0.22" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="0.32" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="0.39" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="0.51" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="D_ICT" />
+        <generic:Value id="GEO" value="SE" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="1.9" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="2.14" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="2.08" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="2.1" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="1.0" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="0.46" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="1.88" />
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="D_ICT" />
+        <generic:Value id="GEO" value="SI" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="0.27" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="0.81" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="0.86" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="0.95" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="1.32" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="1.31" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="1.36" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="1.42" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="1.4" />
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="D_ICT" />
+        <generic:Value id="GEO" value="SK" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="0.48" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="0.91" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="1.49" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="1.5" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="0.68" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="0.83" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="0.8" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="0.86" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="0.75" />
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="D_ICT" />
+        <generic:Value id="GEO" value="UK" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="0.34" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="0.71" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="0.7" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="0.73" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="0.9" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="0.92" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="1.01" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="1.03" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="1.64" />
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="G-Q_ICT" />
+        <generic:Value id="GEO" value="AT" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="2.78" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="2.76" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="2.9" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="3.05" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="3.13" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="3.15" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="3.39" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="4.38" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="4.31" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="3.73" />
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="G-Q_ICT" />
+        <generic:Value id="GEO" value="BE" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="4.08" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="3.99" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="4.19" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="4.18" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="4.35" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="4.19" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="4.22" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="5.01" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="4.88" />
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="G-Q_ICT" />
+        <generic:Value id="GEO" value="BG" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="5.16" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="5.49" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="5.33" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="5.92" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="5.49" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="5.75" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="4.29" />
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="G-Q_ICT" />
+        <generic:Value id="GEO" value="CY" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="3.48" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="3.57" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="G-Q_ICT" />
+        <generic:Value id="GEO" value="CZ" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="4.32" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="G-Q_ICT" />
+        <generic:Value id="GEO" value="DE" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="3.91" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="3.53" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="3.37" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="3.46" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="3.45" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="3.6" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="3.37" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="3.5" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="3.38" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="G-Q_ICT" />
+        <generic:Value id="GEO" value="DK" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="4.57" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="4.45" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="4.35" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="5.07" />
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="G-Q_ICT" />
+        <generic:Value id="GEO" value="EE" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="4.51" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="3.81" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="3.73" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="3.7" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="3.82" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="4.06" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="G-Q_ICT" />
+        <generic:Value id="GEO" value="EL" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="2.67" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="2.53" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="2.55" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="2.58" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="2.82" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="2.82" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="4.82" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="4.2" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="3.89" />
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="G-Q_ICT" />
+        <generic:Value id="GEO" value="ES" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="3.51" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="3.5" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="3.54" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="3.51" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="3.55" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="3.62" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="3.65" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="3.61" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="4.02" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="3.78" />
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="G-Q_ICT" />
+        <generic:Value id="GEO" value="EU25" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="4.01" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="3.98" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="3.98" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="G-Q_ICT" />
+        <generic:Value id="GEO" value="EU27" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="4.08" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="4.04" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="G-Q_ICT" />
+        <generic:Value id="GEO" value="FI" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="3.89" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="3.64" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="3.8" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="3.82" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="3.79" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="3.55" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="4.09" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="3.96" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="4.67" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="4.46" />
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="G-Q_ICT" />
+        <generic:Value id="GEO" value="FR" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="3.85" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="3.82" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="3.59" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="3.6" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="3.59" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="3.62" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="3.45" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="3.35" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="3.95" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="G-Q_ICT" />
+        <generic:Value id="GEO" value="HU" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="4.24" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="4.17" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="4.0" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="3.84" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="4.01" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="3.9" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="3.91" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="4.14" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="4.34" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="3.93" />
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="G-Q_ICT" />
+        <generic:Value id="GEO" value="IE" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="6.79" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="6.45" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="G-Q_ICT" />
+        <generic:Value id="GEO" value="IT" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="3.21" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="3.23" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="3.21" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="3.29" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="3.26" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="3.26" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="3.35" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="3.31" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="3.74" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="3.38" />
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="G-Q_ICT" />
+        <generic:Value id="GEO" value="LT" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="2.39" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="2.02" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="2.42" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="2.42" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="2.42" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="2.45" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="2.55" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="3.86" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="3.29" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="3.38" />
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="G-Q_ICT" />
+        <generic:Value id="GEO" value="LU" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="6.55" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="6.41" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="6.3" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="G-Q_ICT" />
+        <generic:Value id="GEO" value="LV" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="3.27" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="3.33" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="3.5" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="4.17" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="4.51" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="4.84" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="5.01" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="6.15" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="5.03" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="G-Q_ICT" />
+        <generic:Value id="GEO" value="MT" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="G-Q_ICT" />
+        <generic:Value id="GEO" value="NL" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="4.73" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="G-Q_ICT" />
+        <generic:Value id="GEO" value="PL" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="2.8" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="3.03" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="G-Q_ICT" />
+        <generic:Value id="GEO" value="PT" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="3.37" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="3.37" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="3.46" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="3.38" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="3.26" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="4.09" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="4.02" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="3.87" />
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="G-Q_ICT" />
+        <generic:Value id="GEO" value="RO" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="3.06" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="3.12" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="3.1" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="3.27" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="3.45" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="3.33" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="3.27" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="3.23" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="3.78" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="G-Q_ICT" />
+        <generic:Value id="GEO" value="SE" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="4.95" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="4.63" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="4.75" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="4.87" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="4.73" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="4.37" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="6.26" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="6.25" />
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="G-Q_ICT" />
+        <generic:Value id="GEO" value="SI" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="2.95" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="3.13" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="3.28" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="2.69" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="2.58" />
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="G-Q_ICT" />
+        <generic:Value id="GEO" value="SK" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="3.27" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="3.6" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="3.32" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="3.23" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="3.33" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="3.24" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="3.17" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="3.29" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="3.42" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="G-Q_ICT" />
+        <generic:Value id="GEO" value="UK" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="5.7" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="6.07" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="5.93" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="5.68" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="5.92" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="5.54" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="5.72" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="6.4" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="6.89" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="6.62" />
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="ICT" />
+        <generic:Value id="GEO" value="AT" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="3.24" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="3.25" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="3.76" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="4.41" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="4.47" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="4.47" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="4.6" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="5.64" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="5.82" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="5.27" />
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="ICT" />
+        <generic:Value id="GEO" value="BE" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="4.56" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="4.88" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="5.0" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="5.18" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="5.04" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="5.07" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="5.84" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="5.85" />
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="ICT" />
+        <generic:Value id="GEO" value="BG" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="5.36" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="5.98" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="5.81" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="6.33" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="5.91" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="6.14" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="4.63" />
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="ICT" />
+        <generic:Value id="GEO" value="CY" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="3.6" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="ICT" />
+        <generic:Value id="GEO" value="CZ" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="ICT" />
+        <generic:Value id="GEO" value="DE" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="4.3" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="4.11" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="4.72" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="4.65" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="4.63" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="4.81" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="4.5" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="4.55" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="4.45" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="ICT" />
+        <generic:Value id="GEO" value="DK" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="5.24" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="5.09" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="4.94" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="5.83" />
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="ICT" />
+        <generic:Value id="GEO" value="EE" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="5.11" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="4.46" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="4.57" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="4.64" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="4.88" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="4.91" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="ICT" />
+        <generic:Value id="GEO" value="EL" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="2.71" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="2.71" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="2.75" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="3.05" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="3.09" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="ICT" />
+        <generic:Value id="GEO" value="ES" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="3.51" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="3.62" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="3.86" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="3.8" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="3.84" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="3.91" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="3.96" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="3.97" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="4.59" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="4.32" />
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="ICT" />
+        <generic:Value id="GEO" value="EU25" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="4.94" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="4.96" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="4.96" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="4.87" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="4.85" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="4.96" />
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="ICT" />
+        <generic:Value id="GEO" value="EU27" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="4.97" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="5.02" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="5.03" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="ICT" />
+        <generic:Value id="GEO" value="FI" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="5.31" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="7.01" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="9.13" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="8.21" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="8.06" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="7.88" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="9.37" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="8.94" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="10.53" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="10.16" />
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="ICT" />
+        <generic:Value id="GEO" value="FR" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="4.11" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="4.18" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="4.42" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="4.44" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="4.5" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="4.55" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="4.52" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="4.53" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="5.25" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="ICT" />
+        <generic:Value id="GEO" value="HU" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="5.93" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="5.96" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="5.84" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="6.41" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="7.0" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="6.63" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="6.71" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="5.82" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="6.44" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="5.91" />
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="ICT" />
+        <generic:Value id="GEO" value="IE" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="8.98" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="ICT" />
+        <generic:Value id="GEO" value="IT" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="3.54" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="3.86" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="3.94" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="3.9" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="3.93" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="4.07" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="4.01" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="4.54" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="4.3" />
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="ICT" />
+        <generic:Value id="GEO" value="LT" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="2.18" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="2.7" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="2.84" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="3.22" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="4.17" />
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="ICT" />
+        <generic:Value id="GEO" value="LU" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="ICT" />
+        <generic:Value id="GEO" value="LV" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="3.45" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="ICT" />
+        <generic:Value id="GEO" value="MT" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="ICT" />
+        <generic:Value id="GEO" value="NL" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="ICT" />
+        <generic:Value id="GEO" value="PL" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="3.15" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="ICT" />
+        <generic:Value id="GEO" value="PT" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="3.54" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="3.62" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="3.98" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="3.84" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="4.64" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="4.67" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="4.57" />
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="ICT" />
+        <generic:Value id="GEO" value="RO" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="3.33" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="3.34" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="3.59" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="3.72" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="4.29" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="ICT" />
+        <generic:Value id="GEO" value="SE" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="6.31" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="6.54" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="6.89" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="6.95" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="6.82" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="5.37" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="6.73" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="8.13" />
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="ICT" />
+        <generic:Value id="GEO" value="SI" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="3.41" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="4.08" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="4.11" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="3.98" />
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="ICT" />
+        <generic:Value id="GEO" value="SK" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="3.75" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="4.51" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="4.81" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="4.74" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="3.92" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="4.0" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="4.09" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="4.28" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+    </generic:Series>
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_VAL" />
+        <generic:Value id="NACE_R1" value="ICT" />
+        <generic:Value id="GEO" value="UK" />
+        <generic:Value id="FREQ" value="A" />
+      </generic:SeriesKey>
+      <generic:Obs>
+        <generic:ObsDimension value="2009" />
+        <generic:ObsValue value="NaN" />
+        <generic:Attributes>
+          <generic:Value id="OBS_STATUS" value="na" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2008" />
+        <generic:ObsValue value="6.4" />
+        <generic:Attributes>
+          <generic:Value id="OBS_FLAG" value="b" />
+        </generic:Attributes>
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2007" />
+        <generic:ObsValue value="6.65" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2006" />
+        <generic:ObsValue value="6.37" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2005" />
+        <generic:ObsValue value="6.65" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2004" />
+        <generic:ObsValue value="6.44" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2003" />
+        <generic:ObsValue value="6.64" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2002" />
+        <generic:ObsValue value="7.41" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2001" />
+        <generic:ObsValue value="7.92" />
+      </generic:Obs>
+      <generic:Obs>
+        <generic:ObsDimension value="2000" />
+        <generic:ObsValue value="8.26" />
+      </generic:Obs>
+    </generic:Series>
+  </message:DataSet>
+</message:GenericData>

@@ -19,9 +19,12 @@ import org.sdmxsource.sdmx.api.manager.retrieval.SdmxBeanRetrievalManager;
 import org.sdmxsource.sdmx.api.model.StructureWorkspace;
 import org.sdmxsource.sdmx.api.model.beans.SdmxBeans;
 import org.sdmxsource.sdmx.api.model.beans.base.MaintainableBean;
+import org.sdmxsource.sdmx.api.model.beans.datastructure.DataflowBean;
 import org.sdmxsource.sdmx.api.model.data.Observation;
+import org.sdmxsource.sdmx.api.model.mutable.datastructure.DataflowMutableBean;
 import org.sdmxsource.sdmx.api.util.ReadableDataLocation;
 import org.sdmxsource.sdmx.dataparser.manager.DataReaderManager;
+import org.sdmxsource.sdmx.sdmxbeans.model.mutable.metadatastructure.DataflowMutableBeanImpl;
 import org.sdmxsource.sdmx.structureretrieval.manager.InMemoryRetrievalManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -45,7 +48,7 @@ public class Sdmx2Rdf {
 	private DataReaderManager dataReaderManager;
 
 	@Autowired
-	private URIFactory uriManager;
+	private URIFactory uriFactory;
 
 	@Autowired
 	ConverterFactory converterFactory;
@@ -91,9 +94,21 @@ public class Sdmx2Rdf {
 		if (dataInputStream != null) {
 			ReadableDataLocation drdl = rdlFactory.getReadableDataLocation(dataInputStream);
 			DataReaderEngine dre = dataReaderManager.getDataReaderEngine(drdl, retreivalManager);
-			Resource datasetRdf = datasetMap.get(dre.getHeader().getDatasetId());
+			String dataSetId = dre.getHeader().getDatasetId();
+			Resource datasetRdf = datasetMap.get(dataSetId);
 
 			while (dre.moveNextDataset()) {
+				if ( datasetRdf == null ) {
+					// TODO: refactor this
+					// when we had no dataflow, try to create the dataset on the fly
+					DataflowMutableBean dataFlow = new DataflowMutableBeanImpl();
+					dataFlow.setAgencyId(dre.getDataStructure().getAgencyId());
+					dataFlow.setId(dataSetId);
+					dataFlow.addName("en", dataSetId);
+					dataFlow.setDataStructureRef(dre.getDataStructure().asReference());
+					DataflowBean dataFlowBean = dataFlow.getImmutableInstance();
+					datasetRdf = converterFactory.convert(dataFlowBean, model);
+				}
 				while (dre.moveNextKeyable()) {
 					while (dre.moveNextObservation()) {
 						Observation obs = dre.getCurrentObservation();
@@ -109,7 +124,7 @@ public class Sdmx2Rdf {
 	@PostConstruct
 	private void initModel() {
 		model = ModelFactory.createDefaultModel();
-		for (Entry<String, String> entry : uriManager.getNSMap().entrySet()) {
+		for (Entry<String, String> entry : uriFactory.getNSMap().entrySet()) {
 			model.setNsPrefix(entry.getKey(), entry.getValue());
 		}
 	}

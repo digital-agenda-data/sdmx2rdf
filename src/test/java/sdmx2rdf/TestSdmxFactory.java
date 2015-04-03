@@ -55,7 +55,6 @@ public class TestSdmxFactory {
 
 	private final Log logger = LogFactory.getLog(getClass());
 
-	@Test
 	public void test1() throws IOException {
 		String dataset = "isoc_ic_biski";
 
@@ -63,6 +62,18 @@ public class TestSdmxFactory {
 				new InputStream[] { dataflowFactory.getDataflow(dataset), dataflowFactory.getDSD(dataset) },
 				dataflowFactory.getData(dataset));
 
+		FileOutputStream out = new FileOutputStream(dataset + ".rdf");
+		sdmx2rdf.writeTo(out);
+		out.close();
+	}
+
+	@Test
+	public void test_isoc_ic_bisec() throws IOException {
+		String dataset = "isoc_ic_biski";
+
+		sdmx2rdf.parse(
+				new InputStream[] { dataflowFactory.getDSD(dataset) },
+				dataflowFactory.getData(dataset));
 		FileOutputStream out = new FileOutputStream(dataset + ".rdf");
 		sdmx2rdf.writeTo(out);
 		out.close();

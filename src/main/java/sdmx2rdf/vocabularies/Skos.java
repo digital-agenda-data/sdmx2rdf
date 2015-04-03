@@ -1,4 +1,4 @@
-package sdmx.converter;
+package sdmx2rdf.vocabularies;
 
 /* CVS $Id: $ */
 

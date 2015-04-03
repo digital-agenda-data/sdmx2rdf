@@ -5,8 +5,8 @@ import org.sdmxsource.sdmx.api.model.beans.datastructure.PrimaryMeasureBean;
 import org.sdmxsource.sdmx.api.model.beans.reference.CrossReferenceBean;
 import org.springframework.stereotype.Service;
 
-import sdmx.converter.Cube;
-import sdmx.converter.Skos;
+import sdmx2rdf.vocabularies.Cube;
+import sdmx2rdf.vocabularies.Skos;
 
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.Resource;

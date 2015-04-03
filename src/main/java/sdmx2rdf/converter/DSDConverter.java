@@ -7,8 +7,8 @@ import org.sdmxsource.sdmx.api.model.beans.datastructure.DimensionBean;
 import org.sdmxsource.sdmx.api.model.beans.datastructure.PrimaryMeasureBean;
 import org.springframework.stereotype.Service;
 
-import sdmx.converter.Cube;
-import sdmx.converter.Sdmx;
+import sdmx2rdf.vocabularies.Cube;
+import sdmx2rdf.vocabularies.Sdmx;
 
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.Resource;

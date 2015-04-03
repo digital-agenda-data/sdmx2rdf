@@ -5,7 +5,7 @@ import org.sdmxsource.sdmx.api.model.beans.base.TextTypeWrapper;
 import org.sdmxsource.sdmx.api.model.beans.datastructure.DataflowBean;
 import org.springframework.stereotype.Service;
 
-import sdmx.converter.Cube;
+import sdmx2rdf.vocabularies.Cube;
 
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.Resource;

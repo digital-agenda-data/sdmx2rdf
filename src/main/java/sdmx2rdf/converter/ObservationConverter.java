@@ -16,8 +16,8 @@ import org.sdmxsource.sdmx.api.model.data.Observation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import sdmx.converter.Cube;
 import sdmx2rdf.URIFactory;
+import sdmx2rdf.vocabularies.Cube;
 
 import com.hp.hpl.jena.rdf.model.Literal;
 import com.hp.hpl.jena.rdf.model.Model;

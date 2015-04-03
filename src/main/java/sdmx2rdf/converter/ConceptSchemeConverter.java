@@ -6,7 +6,7 @@ import org.sdmxsource.sdmx.api.model.beans.base.ItemSchemeBean;
 import org.sdmxsource.sdmx.api.model.beans.base.TextTypeWrapper;
 import org.springframework.stereotype.Service;
 
-import sdmx.converter.Skos;
+import sdmx2rdf.vocabularies.Skos;
 
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.Resource;

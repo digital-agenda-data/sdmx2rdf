@@ -13,9 +13,9 @@ import org.sdmxsource.sdmx.api.model.beans.reference.StructureReferenceBean;
 import org.sdmxsource.sdmx.util.beans.reference.StructureReferenceBeanImpl;
 import org.springframework.stereotype.Component;
 
-import sdmx.converter.Cube;
-import sdmx.converter.Sdmx;
-import sdmx.converter.Skos;
+import sdmx2rdf.vocabularies.Cube;
+import sdmx2rdf.vocabularies.Sdmx;
+import sdmx2rdf.vocabularies.Skos;
 
 import com.hp.hpl.jena.sparql.vocabulary.FOAF;
 import com.hp.hpl.jena.vocabulary.DCTerms;

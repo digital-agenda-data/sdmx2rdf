@@ -22,6 +22,9 @@ public class ConverterFactory implements Converter {
 	CodeListConverter codeListConverter;
 	
 	@Autowired
+	ConceptConverter conceptConverter;
+	
+	@Autowired
 	ConceptSchemeConverter conceptSchemeConverter;
 	
 	@Autowired
@@ -43,6 +46,8 @@ public class ConverterFactory implements Converter {
 				return dsdConverter;
 			case CODE_LIST:
 				return codeListConverter;
+			case CONCEPT:
+				return conceptConverter;
 			case CONCEPT_SCHEME:
 				return conceptSchemeConverter;
 			case TIME_DIMENSION:

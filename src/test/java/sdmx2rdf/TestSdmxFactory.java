@@ -29,8 +29,8 @@ public class TestSdmxFactory {
 	static class ContextConfiguration {
 
 		@Bean
-		public DataflowFactory dataflowFactory() {
-			return new DataflowFactory();
+		public DatasetFactory datasetFactory() {
+			return new TestDatasetFactory();
 		}
 
 		@Bean
@@ -45,7 +45,7 @@ public class TestSdmxFactory {
 	}
 
 	@Autowired
-	private DataflowFactory dataflowFactory;
+	private DatasetFactory datasetFactory;
 
 	@Autowired
 	private Sdmx2Rdf sdmx2rdf;
@@ -59,8 +59,8 @@ public class TestSdmxFactory {
 		String dataset = "isoc_ic_biski";
 
 		sdmx2rdf.parse(
-				new InputStream[] { dataflowFactory.getDataflow(dataset), dataflowFactory.getDSD(dataset) },
-				dataflowFactory.getData(dataset));
+				new InputStream[] { datasetFactory.getDataflow(dataset), datasetFactory.getDSD(dataset) },
+				datasetFactory.getData(dataset));
 
 		FileOutputStream out = new FileOutputStream(dataset + ".rdf");
 		sdmx2rdf.writeTo(out);
@@ -72,8 +72,8 @@ public class TestSdmxFactory {
 		String dataset = "isoc_ic_biski";
 
 		sdmx2rdf.parse(
-				new InputStream[] { dataflowFactory.getDSD(dataset) },
-				dataflowFactory.getData(dataset));
+				new InputStream[] { datasetFactory.getDSD(dataset) },
+				datasetFactory.getData(dataset));
 		FileOutputStream out = new FileOutputStream(dataset + ".rdf");
 		sdmx2rdf.writeTo(out);
 		out.close();

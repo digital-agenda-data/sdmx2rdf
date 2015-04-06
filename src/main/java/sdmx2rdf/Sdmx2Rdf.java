@@ -55,7 +55,7 @@ public class Sdmx2Rdf {
 
 	private Model model;
 
-	private static final Log logger = LogFactory.getLog(TestSdmxFactory.class);
+	private final Log logger = LogFactory.getLog(getClass());
 
 	public void parse(InputStream[] structuresInputStreams, InputStream dataInputStream) {
 		SdmxBeans beans = null;

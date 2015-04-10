@@ -32,6 +32,6 @@ public class EurostatAppContextConfiguration {
 	
 	@Bean
 	public DatasetFactory datasetFactory() {
-		return new EurostatBulkDatasetFactory();
+		return new EurostatWSDatasetFactory();
 	}
 }

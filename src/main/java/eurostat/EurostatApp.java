@@ -43,13 +43,13 @@ public class EurostatApp {
 
 	private final Log logger = LogFactory.getLog(getClass());
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws Exception {
 		ApplicationContext ctx = new AnnotationConfigApplicationContext(EurostatAppContextConfiguration.class);
 		EurostatApp app = ctx.getBean(EurostatApp.class);
 		app.downloadAllIsoc();
 	}
 
-	public void downloadAllIsoc() throws IOException {
+	public void downloadAllIsoc() throws Exception {
 		// TODO: get this from http://www.ec.europa.eu/eurostat/SDMX/diss-web/rest/dataflow/ESTAT/all/latest
 		// get all dataflows from main file
 		InputStream dataflows = EurostatApp.class.getResourceAsStream("/eurostat_dataflows/latest");
@@ -59,7 +59,7 @@ public class EurostatApp {
 		for (MaintainableBean bean : beans.getAllMaintainables()) {
 			SDMX_STRUCTURE_TYPE beanType = bean.getStructureType();
 			if (bean.getStructureType() == SDMX_STRUCTURE_TYPE.DATAFLOW) {
-				if ( bean.getId().startsWith("isoc_")) {
+				if ( bean.getId().startsWith("isoc_bde15b_e")) {
 					logger.info(MessageFormat.format("Found {0}, id={1}, name={2}", beanType, bean.getId(), bean.getName()));
 					// replace this with downloadDataset if you want to download only
 					convertDataset(bean.getId());
@@ -68,13 +68,13 @@ public class EurostatApp {
 		}
 	}
 
-	public void downloadDataset(String dataset) throws IOException {
+	public void downloadDataset(String dataset) throws Exception {
 		// download only
 		datasetFactory.getDSD(dataset);
 		datasetFactory.getData(dataset);
 	}
 	
-	public void convertDataset(String dataset) throws IOException {
+	public void convertDataset(String dataset) throws Exception {
 		sdmx2rdf.parse(new InputStream[] { datasetFactory.getDSD(dataset) }, datasetFactory.getData(dataset));
 		FileOutputStream out = new FileOutputStream(dataset + ".rdf");
 		sdmx2rdf.writeTo(out);

@@ -5,7 +5,7 @@ import java.io.InputStream;
 
 public interface DatasetFactory {
 
-	public InputStream getDSD(String dataset) throws IOException;
-	public InputStream getData(String dataset) throws IOException;
+	public InputStream getDSD(String dataset) throws Exception;
+	public InputStream getData(String dataset) throws IOException, Exception;
 	public InputStream getDataflow(String dataset) throws IOException;
 }

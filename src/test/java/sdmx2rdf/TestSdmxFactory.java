@@ -55,7 +55,7 @@ public class TestSdmxFactory {
 
 	private final Log logger = LogFactory.getLog(getClass());
 
-	public void test1() throws IOException {
+	public void test1() throws Exception {
 		String dataset = "isoc_ic_biski";
 
 		sdmx2rdf.parse(
@@ -68,7 +68,7 @@ public class TestSdmxFactory {
 	}
 
 	@Test
-	public void test_isoc_ic_bisec() throws IOException {
+	public void test_isoc_ic_bisec() throws Exception {
 		String dataset = "isoc_ic_biski";
 
 		sdmx2rdf.parse(

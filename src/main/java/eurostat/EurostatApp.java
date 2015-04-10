@@ -59,7 +59,7 @@ public class EurostatApp {
 		for (MaintainableBean bean : beans.getAllMaintainables()) {
 			SDMX_STRUCTURE_TYPE beanType = bean.getStructureType();
 			if (bean.getStructureType() == SDMX_STRUCTURE_TYPE.DATAFLOW) {
-				if ( bean.getId().startsWith("isoc_bde15b_e")) {
+				if ( bean.getId().startsWith("isoc_")) {
 					logger.info(MessageFormat.format("Found {0}, id={1}, name={2}", beanType, bean.getId(), bean.getName()));
 					// replace this with downloadDataset if you want to download only
 					convertDataset(bean.getId());

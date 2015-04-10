@@ -65,34 +65,39 @@ public class EurostatWSDatasetFactory implements DatasetFactory {
 		URL redirectURL = getRedirectURL(file);
 		
 		if (redirectURL != null) {
-			downloadZIPAfterRedirect(cache_dir, dataset, redirectURL);
+			downloadZIPAfterRedirect(cache_dir, dataset, redirectURL, file);
 		}
 
 		return new FileInputStream(file);
 	}
 	
-	protected void downloadZIPAfterRedirect(String cache_dir, String dataset, URL source) throws IOException {
+	protected void downloadZIPAfterRedirect(String cache_dir, String dataset, URL source, File destination) throws Exception {
 		File file = new File(cache_dir, dataset + ".zip");
 		logger.debug(file);
 		logger.debug(source);
-		FileUtils.copyURLToFile(source, file);
+		for (int i = 0; i < 60; i++) {
+			try {
+				FileUtils.copyURLToFile(source, file);
+				break;
+			} catch (FileNotFoundException e) {
+				logger.warn("Failed to download. Retrying..");
+				Thread.sleep(1000);
+			}
+		}
 		
 		// unzip
 		ZipFile zipFile = new ZipFile(file);
 		Enumeration<? extends ZipEntry> entries = zipFile.entries();
 		while (entries.hasMoreElements()) {
 			ZipEntry entry = entries.nextElement();
-			File entryDestination = new File(cache_dir, entry.getName());
-			entryDestination.getParentFile().mkdirs();
-			if (entry.isDirectory())
-				entryDestination.mkdirs();
-			else {
-				InputStream in = zipFile.getInputStream(entry);
-				OutputStream out = new FileOutputStream(entryDestination);
-				IOUtils.copy(in, out);
-				IOUtils.closeQuietly(in);
-				IOUtils.closeQuietly(out);
-			}
+
+			// We expect just one file here
+			InputStream in = zipFile.getInputStream(entry);
+			OutputStream out = new FileOutputStream(destination);
+			IOUtils.copy(in, out);
+			IOUtils.closeQuietly(in);
+			IOUtils.closeQuietly(out);
+			break;
 		}
 		zipFile.close();
 	}

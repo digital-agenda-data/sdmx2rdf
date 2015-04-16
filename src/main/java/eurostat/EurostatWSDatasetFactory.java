@@ -135,10 +135,14 @@ public class EurostatWSDatasetFactory implements DatasetFactory {
 				nestingStack.pop();
 			} else if (event == XMLStreamConstants.CHARACTERS) {
 				// TODO(catalinb): check that we are in the correct context here
-				
+				logger.error(code);
+				if (!code.equals("413")) {
+					continue;
+				}
 				if (messageIndex == 2) {
 					logger.error("REDIRECT URL: " + parser.getText());
-					return new URL(parser.getText());
+					URL url = new URL(parser.getText());
+					return url;
 				}
 			}
 		}

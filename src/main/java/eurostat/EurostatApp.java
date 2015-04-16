@@ -3,6 +3,7 @@ package eurostat;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.MalformedURLException;
 import java.text.MessageFormat;
 
 import org.apache.commons.logging.Log;
@@ -59,10 +60,14 @@ public class EurostatApp {
 		for (MaintainableBean bean : beans.getAllMaintainables()) {
 			SDMX_STRUCTURE_TYPE beanType = bean.getStructureType();
 			if (bean.getStructureType() == SDMX_STRUCTURE_TYPE.DATAFLOW) {
-				if ( bean.getId().startsWith("isoc_")) {
+				if ( bean.getId().startsWith("a")) {
 					logger.info(MessageFormat.format("Found {0}, id={1}, name={2}", beanType, bean.getId(), bean.getName()));
 					// replace this with downloadDataset if you want to download only
-					convertDataset(bean.getId());
+					try {
+						convertDataset(bean.getId());
+					} catch (MalformedURLException e) {
+						logger.error("Failed to download data:" + e.getMessage());
+					}
 				}
 			}
 		}

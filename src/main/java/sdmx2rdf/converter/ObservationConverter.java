@@ -86,8 +86,13 @@ public class ObservationConverter {
 				CrossReferenceBean codelistRef = attributeBean.getRepresentation().getRepresentation();
 				CodelistBean codelistBean = (CodelistBean) retreivalManager.getMaintainableBean(codelistRef);
 				CodeBean codeBean = codelistBean.getCodeById(keyValue.getCode());
-				Resource codeResource = model.createResource(uriFactory.getURI(codeBean.getUrn()));
-				rdfObs.addProperty(attributeProperty, codeResource);
+				
+				if (codeBean != null) {
+					Resource codeResource = model.createResource(uriFactory.getURI(codeBean.getUrn()));
+					rdfObs.addProperty(attributeProperty, codeResource);
+				} else {
+					logger.error("Invalid code id: " + keyValue.getCode());
+				}
 			} else {
 				logger.error("unsupported attribute representation");
 			}

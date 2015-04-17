@@ -7,7 +7,10 @@ import java.util.Map;
 
 import javax.annotation.PostConstruct;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.sdmxsource.sdmx.api.constants.SDMX_STRUCTURE_TYPE;
+import org.sdmxsource.sdmx.api.constants.TIME_FORMAT;
 import org.sdmxsource.sdmx.api.model.beans.reference.MaintainableRefBean;
 import org.sdmxsource.sdmx.api.model.beans.reference.StructureReferenceBean;
 import org.sdmxsource.sdmx.util.beans.reference.StructureReferenceBeanImpl;
@@ -26,6 +29,8 @@ import com.hp.hpl.jena.vocabulary.OWL;
 public class URIFactory {
 
 	private Map<String, String> nsPrefixMap;
+	
+	private final Log logger = LogFactory.getLog(getClass());
 
 	public String getURI(String structureUrn) {
 		StructureReferenceBean sRef = new StructureReferenceBeanImpl(structureUrn);
@@ -77,5 +82,44 @@ public class URIFactory {
 		nsPrefixMap.put("dctypes", DCTypes.NS);
 		nsPrefixMap.put("foaf", FOAF.NS);
 		nsPrefixMap.put("estat", "http://ec.europa.eu/eurostat/");
+		nsPrefixMap.put("time", "http://reference.data.gov.uk/doc/");
+	}
+	
+	public String getTimeBaseURI(TIME_FORMAT timeFormat, String value) {
+		String baseURI;
+		switch(timeFormat) {
+		case DATE:
+			baseURI = "http://reference.data.gov.uk/doc/day/";
+			break;
+		case DATE_TIME:
+			baseURI = "http://reference.data.gov.uk/doc/second/";
+			break;
+		case HALF_OF_YEAR:
+			baseURI = "http://reference.data.gov.uk/doc/half/";
+			break;
+		case HOUR:
+			baseURI = "http://reference.data.gov.uk/doc/hour/";
+			break;
+		case MONTH:
+			baseURI = "http://reference.data.gov.uk/doc/month/";
+			break;
+		case QUARTER_OF_YEAR:
+			baseURI = "http://reference.data.gov.uk/doc/quarter/";
+			break;
+		case THIRD_OF_YEAR:
+			logger.error("Thirds of year not supported!");
+			return null;
+		case WEEK:
+			baseURI = "http://reference.data.gov.uk/doc/week/";
+			break;
+		case YEAR:
+			baseURI = "http://reference.data.gov.uk/doc/year/";
+			break;
+		default:
+			logger.error("Unknown time format.");
+			return null;
+		
+		}
+		return baseURI + value;
 	}
 }

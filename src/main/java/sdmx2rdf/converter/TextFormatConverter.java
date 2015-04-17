@@ -41,15 +41,16 @@ public class TextFormatConverter extends AbstractConverter<TextFormatBean> {
 		case DATE_TIME:
 		case TIME:
 			return XSD.dateTime;
-		default:
-			return XSD.xstring;
 			// case ALPHA_NUMERIC:
 			// case STRING:
 			// case ALPHA:
-			// case OBSERVATIONAL_TIME_PERIOD:
-			// case BASIC_TIME_PERIOD:
-			// case YEAR_MONTH:
-			// case MONTH_DAY:
+		case OBSERVATIONAL_TIME_PERIOD:
+		case BASIC_TIME_PERIOD:
+			return null;
+		case YEAR_MONTH:
+			return XSD.gYearMonth;
+		case MONTH_DAY:
+			return XSD.gMonthDay;
 			// case DURATION:
 			// case URI:
 			// case TIMESPAN:
@@ -59,22 +60,30 @@ public class TextFormatConverter extends AbstractConverter<TextFormatBean> {
 			// case EXCLUSIVE_VALUE_RANGE:
 			// case INCREMENTAL:
 			// case KEY_VALUES:
-			// case TIME_PERIOD:
-			// case GREGORIAN_DAY:
-			// case GREGORIAN_TIME_PERIOD:
-			// case GREGORIAN_YEAR:
-			// case GREGORIAN_YEAR_MONTH:
-			// case REPORTING_DAY:
-			// case REPORTING_MONTH:
-			// case REPORTING_QUARTER:
-			// case REPORTING_SEMESTER:
-			// case REPORTING_TIME_PERIOD:
-			// case REPORTING_TRIMESTER:
-			// case REPORTING_WEEK:
-			// case REPORTING_YEAR:
-			// case STANDARD_TIME_PERIOD:
-			// case TIMES_RANGE:
+		case TIME_PERIOD:
+			return null;
+		case GREGORIAN_DAY:
+			return XSD.gDay;
+		case GREGORIAN_TIME_PERIOD:
+			return null;
+		case GREGORIAN_YEAR:
+			return XSD.gYear;
+		case GREGORIAN_YEAR_MONTH:
+			return XSD.gYearMonth;
+		case REPORTING_DAY:
+		case REPORTING_MONTH:
+		case REPORTING_QUARTER:
+		case REPORTING_SEMESTER:
+		case REPORTING_TIME_PERIOD:
+		case REPORTING_TRIMESTER:
+		case REPORTING_WEEK:
+		case REPORTING_YEAR:
+		case STANDARD_TIME_PERIOD:
+			return null;
+			//case TIMES_RANGE:
 			// case IDENTIFIABLE_REFERENCE:
+		default:
+			return XSD.xstring;
 		}
 	}
 }

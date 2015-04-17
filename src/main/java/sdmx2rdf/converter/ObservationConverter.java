@@ -70,11 +70,11 @@ public class ObservationConverter {
 		}
 		
 		if (seriesKey.isTimeSeries()) {
-			//FIXME(catalinb)
-			// what xsd:datatype?
 			DimensionBean timeDimension = dsd.getTimeDimension();
 			Property timeDimensionProperty = model.createProperty(uriFactory.getURI(timeDimension.getUrn()));
-			rdfObs.addProperty(timeDimensionProperty, observation.getObsTime());
+				
+			String timeURI = uriFactory.getTimeBaseURI(observation.getObsTimeFormat(), observation.getObsTime());
+			rdfObs.addProperty(timeDimensionProperty, model.createResource(timeURI));
 		} else {
 			logger.error("Only time series supported.");
 		}

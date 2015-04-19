@@ -1,0 +1,53 @@
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+    http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID"
+         version="2.5">
+    <!-- OLD ENV -->
+    <!-- Application name -->
+    <display-name>Sdmx2Rdf</display-name>
+
+    <!-- Short description -->
+    <description>Sdmx2Rdf web demo</description>
+
+    <!-- Servlet declaration -->
+    <servlet>
+        <servlet-name>eurostatServlet</servlet-name>
+        <servlet-class>
+            org.springframework.web.context.support.HttpRequestHandlerServlet
+        </servlet-class>
+    </servlet>
+
+    <!-- Map servlet to URL -->
+    <servlet-mapping>
+        <servlet-name>eurostatServlet</servlet-name>
+        <url-pattern>/*</url-pattern>
+    </servlet-mapping>
+
+    <!--Spring configuration-->
+    <listener>
+        <listener-class>
+            org.springframework.web.context.request.RequestContextListener
+        </listener-class>
+    </listener>
+
+    <listener>
+        <listener-class>
+            org.springframework.web.context.ContextLoaderListener
+        </listener-class>
+    </listener>
+
+    <context-param>
+        <param-name>contextClass</param-name>
+        <param-value>
+            org.springframework.web.context.support.AnnotationConfigWebApplicationContext
+        </param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>eurostat.EurostatAppContextConfiguration</param-value>
+    </context-param>
+
+</web-app>

@@ -110,7 +110,9 @@ public class Sdmx2Rdf {
 					datasetRdf = converterFactory.convert(dataFlowBean, model);
 				}
 				while (dre.moveNextKeyable()) {
+//				    logger.info("Keyable " + dre.getCurrentKey());
 					while (dre.moveNextObservation()) {
+//					    logger.info("Observation " + dre.getCurrentObservation());
 						Observation obs = dre.getCurrentObservation();
 						// String dimensionAtObservation =
 						// dre.getCurrentDatasetHeaderBean().getDataStructureReference().getDimensionAtObservation();

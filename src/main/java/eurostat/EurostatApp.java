@@ -1,8 +1,8 @@
 package eurostat;
 
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.net.MalformedURLException;
 import java.text.MessageFormat;
 
@@ -50,21 +50,30 @@ public class EurostatApp {
 		app.downloadAllIsoc();
 	}
 
-	public void downloadAllIsoc() throws Exception {
-		// TODO: get this from http://www.ec.europa.eu/eurostat/SDMX/diss-web/rest/dataflow/ESTAT/all/latest
-		// get all dataflows from main file
-		InputStream dataflows = EurostatApp.class.getResourceAsStream("/eurostat_dataflows/latest");
+    public void downloadAllIsoc() throws Exception {
+        InputStream dataflows = EurostatApp.class.getResourceAsStream("/eurostat_dataflows/latest");
+        // TODO: get this from http://www.ec.europa.eu/eurostat/SDMX/diss-web/rest/dataflow/ESTAT/all/latest
+        // get all dataflows from main file
+        downloadAllIsoc(dataflows, "isoc_bde15dip", null);
+    }
+
+	public void downloadAllIsoc(InputStream dataflows, String filter, OutputStream os) throws Exception {
+
 		ReadableDataLocation dataLocation = rdlFactory.getReadableDataLocation(dataflows);
 		StructureWorkspace workspace = structureParsingManager.parseStructures(dataLocation);
 		SdmxBeans beans = workspace.getStructureBeans(true);
 		for (MaintainableBean bean : beans.getAllMaintainables()) {
 			SDMX_STRUCTURE_TYPE beanType = bean.getStructureType();
 			if (bean.getStructureType() == SDMX_STRUCTURE_TYPE.DATAFLOW) {
-				if ( bean.getId().startsWith("isoc_bde15dip")) {
+				if ( bean.getId().startsWith(filter)) {
 					logger.info(MessageFormat.format("Found {0}, id={1}, name={2}", beanType, bean.getId(), bean.getName()));
 					// replace this with downloadDataset if you want to download only
 					try {
-						convertDataset(bean.getId());
+					    if(os != null){
+						    convertDataset(bean.getId(), os);
+                        } else {
+                            convertDataset(bean.getId());
+                        }
 					} catch (MalformedURLException e) {
 						logger.error("Failed to download data:" + e.getMessage());
 					}
@@ -80,9 +89,14 @@ public class EurostatApp {
 	}
 	
 	public void convertDataset(String dataset) throws Exception {
-		sdmx2rdf.parse(new InputStream[] { datasetFactory.getDSD(dataset) }, datasetFactory.getData(dataset));
-		FileOutputStream out = new FileOutputStream(dataset + ".rdf");
-		sdmx2rdf.writeTo(out);
+        FileOutputStream out = new FileOutputStream(dataset + ".rdf");
+	    convertDataset(dataset, out);
 		out.close();
+	}
+
+	public void convertDataset(String dataset, OutputStream os) throws Exception {
+        logger.info("Dataset: " + dataset);
+        sdmx2rdf.parse(new InputStream[] { datasetFactory.getDSD(dataset) }, datasetFactory.getData(dataset));
+        sdmx2rdf.writeTo(os);
 	}
 }

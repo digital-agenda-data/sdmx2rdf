@@ -58,6 +58,23 @@
 					</outputDirectory>
 				</configuration>
 			</plugin>
+
+            <plugin>
+                <groupId>org.mortbay.jetty</groupId>
+                <artifactId>maven-jetty-plugin</artifactId>
+                <version>6.1.10</version>
+                <configuration>
+                    <scanIntervalSeconds>10</scanIntervalSeconds>
+                    <connectors>
+                        <connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
+                            <port>8080</port>
+                            <maxIdleTime>60000</maxIdleTime>
+                        </connector>
+                    </connectors>
+                    <stopPort>9966</stopPort>
+                    <stopKey>foo</stopKey>
+                </configuration>
+            </plugin>
 		</plugins>
 	</build>
 
@@ -103,6 +120,20 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-tx</artifactId>
 		</dependency>
+
+        <!--WEB APPLICATION-->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
+        </dependency>
+
+        <!--Needed to run the original (non-web) app without errors-->
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>7.0</version>
+        </dependency>
 
 		<!-- SDMX SOURCE DEPENDENCY -->
 		<dependency>

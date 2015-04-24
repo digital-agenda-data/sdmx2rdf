@@ -33,6 +33,9 @@ public class ObservationConverter {
 
 	@Autowired
 	protected ConverterFactory converterFactory;
+	
+	@Autowired
+	protected TimeFormatConverter timeConverter;
 
 	protected final Log logger = LogFactory.getLog(this.getClass());
 	
@@ -72,8 +75,8 @@ public class ObservationConverter {
 		if (seriesKey.isTimeSeries()) {
 			DimensionBean timeDimension = dsd.getTimeDimension();
 			Property timeDimensionProperty = model.createProperty(uriFactory.getURI(timeDimension.getUrn()));
-				
-			String timeURI = uriFactory.getTimeBaseURI(observation.getObsTimeFormat(), observation.getObsTime());
+
+			String timeURI = timeConverter.getTimeBaseURI(observation.getObsTime());
 			rdfObs.addProperty(timeDimensionProperty, model.createResource(timeURI));
 		} else {
 			logger.error("Only time series supported.");

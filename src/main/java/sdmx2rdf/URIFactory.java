@@ -84,42 +84,4 @@ public class URIFactory {
 		nsPrefixMap.put("estat", "http://ec.europa.eu/eurostat/");
 		nsPrefixMap.put("time", "http://reference.data.gov.uk/doc/");
 	}
-	
-	public String getTimeBaseURI(TIME_FORMAT timeFormat, String value) {
-		String baseURI;
-		switch(timeFormat) {
-		case DATE:
-			baseURI = "http://reference.data.gov.uk/doc/day/";
-			break;
-		case DATE_TIME:
-			baseURI = "http://reference.data.gov.uk/doc/second/";
-			break;
-		case HALF_OF_YEAR:
-			baseURI = "http://reference.data.gov.uk/doc/half/";
-			break;
-		case HOUR:
-			baseURI = "http://reference.data.gov.uk/doc/hour/";
-			break;
-		case MONTH:
-			baseURI = "http://reference.data.gov.uk/doc/month/";
-			break;
-		case QUARTER_OF_YEAR:
-			baseURI = "http://reference.data.gov.uk/doc/quarter/";
-			break;
-		case THIRD_OF_YEAR:
-			logger.error("Thirds of year not supported!");
-			return null;
-		case WEEK:
-			baseURI = "http://reference.data.gov.uk/doc/week/";
-			break;
-		case YEAR:
-			baseURI = "http://reference.data.gov.uk/doc/year/";
-			break;
-		default:
-			logger.error("Unknown time format.");
-			return null;
-		
-		}
-		return baseURI + value;
-	}
 }

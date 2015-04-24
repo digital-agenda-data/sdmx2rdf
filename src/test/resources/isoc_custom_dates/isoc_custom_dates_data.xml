@@ -47,50 +47,42 @@
         <!-- Standard Reporting Period -->
         <!-- REPORTING_YEAR]-[PERIOD_INDICATOR][PERIOD_VALUE] -->
         <!-- Reporting year -->
-      <!--
       <generic:Obs>
        <generic:ObsDimension value="2034-A1"/>
         <generic:ObsValue value="18.31"/>
       </generic:Obs>
-      -->
       <!-- Reporting semster -->
       <!-- Note: SDMX technical notes suggests that S is the identifier for semesters -->
       <generic:Obs>
-        <generic:ObsDimension value="2035-B2"/>
+        <generic:ObsDimension value="2035-S2"/>
         <generic:ObsValue value="18.15"/>
       </generic:Obs>
       <!-- Reporting Trimester -->
       <!-- Not supported by sdmxsource -->
-      <!--
       <generic:Obs>
         <generic:ObsDimension value="2036-T3"/>
         <generic:ObsValue value="18.89"/>
       </generic:Obs>
-        -->
       <generic:Obs>
         <!-- Reporting Quarter -->
         <generic:ObsDimension value="2037-Q2"/>
         <generic:ObsValue value="13.37"/>
       </generic:Obs>
       <!-- Reporting Month -->
-      <!--
       <generic:Obs>
         <generic:ObsDimension value="2038-M11"/>
         <generic:ObsValue value="12.93"/>
       </generic:Obs>
-      -->
       <generic:Obs>
         <!-- Reporting Week -->
         <generic:ObsDimension value="2039-W53"/>
         <generic:ObsValue value="13.23"/>
       </generic:Obs>
       <!-- Reporting Day -->
-      <!--
       <generic:Obs>
         <generic:ObsDimension value="2040-D365"/>
         <generic:ObsValue value="12.99"/>
       </generic:Obs>
-      -->
     </generic:Series>
   </message:DataSet>
 </message:GenericData>

@@ -55,8 +55,22 @@ public class TestSdmxFactory {
 
 	private final Log logger = LogFactory.getLog(getClass());
 
+	@Test
 	public void test1() throws Exception {
 		String dataset = "isoc_ic_biski";
+
+		sdmx2rdf.parse(
+				new InputStream[] { datasetFactory.getDataflow(dataset), datasetFactory.getDSD(dataset) },
+				datasetFactory.getData(dataset));
+
+		FileOutputStream out = new FileOutputStream(dataset + ".rdf");
+		sdmx2rdf.writeTo(out);
+		out.close();
+	}
+	
+	@Test
+	public void test_date_formats() throws Exception {
+		String dataset = "isoc_custom_dates";
 
 		sdmx2rdf.parse(
 				new InputStream[] { datasetFactory.getDataflow(dataset), datasetFactory.getDSD(dataset) },

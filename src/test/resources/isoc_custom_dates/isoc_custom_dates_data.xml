@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<message:GenericData xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common" xmlns:footer="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message/footer" xmlns:generic="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic" xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <message:Header>
+    <message:ID>e12ffd6d3c8e566d9415cae889437c48</message:ID>
+    <message:Test>false</message:Test>
+    <message:Prepared>2015-03-03T09:44:41</message:Prepared>
+    <message:Sender id="ESTAT">
+      <common:Name xml:lang="en">Eurostat</common:Name>
+      <message:Timezone>+01:00</message:Timezone>
+    </message:Sender>
+    <message:Receiver id="RECEIVER"/>
+    <message:Structure dimensionAtObservation="TIME_PERIOD" structureID="ESTAT_DSD_isoc_ic_biski_1_0">
+      <common:Structure>
+        <Ref agencyID="ESTAT" id="DSD_isoc_ic_biski" version="1.0"/>
+      </common:Structure>
+    </message:Structure>
+    <message:DataSetAction>Append</message:DataSetAction>
+    <message:DataSetID>isoc_custom_dates</message:DataSetID>
+  </message:Header>
+  <message:DataSet structureRef="ESTAT_DSD_isoc_ic_biski_1_0">
+    <generic:Series>
+      <generic:SeriesKey>
+        <generic:Value id="INDIC_IS" value="IC_SK"/>
+        <generic:Value id="GEO" value="AT"/>
+        <generic:Value id="FREQ" value="A"/>
+      </generic:SeriesKey>
+      <generic:Obs>
+        <!-- Gregorian year -->
+        <generic:ObsDimension value="2030"/>
+        <generic:ObsValue value="17.78"/>
+      </generic:Obs>
+      <generic:Obs>
+        <!-- Gregorian month -->
+        <generic:ObsDimension value="2031-01"/>
+        <generic:ObsValue value="17.82"/>
+      </generic:Obs>
+      <generic:Obs>
+        <!-- Gregorian day -->
+        <generic:ObsDimension value="2032-02-03"/>
+        <generic:ObsValue value="17.57"/>
+      </generic:Obs>
+      <generic:Obs>
+        <!-- Date time -->
+        <generic:ObsDimension value="2033-03-04T12:42:20"/>
+        <generic:ObsValue value="17.57"/>
+      </generic:Obs>
+        <!-- Standard Reporting Period -->
+        <!-- REPORTING_YEAR]-[PERIOD_INDICATOR][PERIOD_VALUE] -->
+        <!-- Reporting year -->
+      <!--
+      <generic:Obs>
+       <generic:ObsDimension value="2034-A1"/>
+        <generic:ObsValue value="18.31"/>
+      </generic:Obs>
+      -->
+      <!-- Reporting semster -->
+      <!-- Note: SDMX technical notes suggests that S is the identifier for semesters -->
+      <generic:Obs>
+        <generic:ObsDimension value="2035-B2"/>
+        <generic:ObsValue value="18.15"/>
+      </generic:Obs>
+      <!-- Reporting Trimester -->
+      <!-- Not supported by sdmxsource -->
+      <!--
+      <generic:Obs>
+        <generic:ObsDimension value="2036-T3"/>
+        <generic:ObsValue value="18.89"/>
+      </generic:Obs>
+        -->
+      <generic:Obs>
+        <!-- Reporting Quarter -->
+        <generic:ObsDimension value="2037-Q2"/>
+        <generic:ObsValue value="13.37"/>
+      </generic:Obs>
+      <!-- Reporting Month -->
+      <!--
+      <generic:Obs>
+        <generic:ObsDimension value="2038-M11"/>
+        <generic:ObsValue value="12.93"/>
+      </generic:Obs>
+      -->
+      <generic:Obs>
+        <!-- Reporting Week -->
+        <generic:ObsDimension value="2039-W53"/>
+        <generic:ObsValue value="13.23"/>
+      </generic:Obs>
+      <!-- Reporting Day -->
+      <!--
+      <generic:Obs>
+        <generic:ObsDimension value="2040-D365"/>
+        <generic:ObsValue value="12.99"/>
+      </generic:Obs>
+      -->
+    </generic:Series>
+  </message:DataSet>
+</message:GenericData>

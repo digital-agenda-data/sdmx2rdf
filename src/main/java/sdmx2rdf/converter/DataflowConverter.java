@@ -24,7 +24,7 @@ public class DataflowConverter extends AbstractConverter<DataflowBean> {
 	@Override
 	public Resource convert(DataflowBean bean, Model model) {
 		Resource dataset = model.createResource(uriFactory.getURI(bean.getUrn()));
-		dataset.addProperty(RDF.type, Cube.dataSet);
+		dataset.addProperty(RDF.type, Cube.DataSet);
 		dataset.addProperty(DCTerms.identifier, bean.getId());
 		if ( bean.getName() == null ) {
 			dataset.addProperty(DCTerms.title, bean.getId());

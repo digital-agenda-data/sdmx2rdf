@@ -44,7 +44,6 @@ public class EurostatWSDatasetFactory implements DatasetFactory {
 	@Override
 	public InputStream getDSD(String dataset) throws Exception {
 		File file = new File(cache_dir, dataset + "_dsd.xml");
-		logger.error(file);
 		if (!file.exists()) {
 			URL source = new URL(MessageFormat.format(dsd_pattern, dataset));
 			FileUtils.copyURLToFile(source, file);
@@ -135,12 +134,11 @@ public class EurostatWSDatasetFactory implements DatasetFactory {
 				nestingStack.pop();
 			} else if (event == XMLStreamConstants.CHARACTERS) {
 				// TODO(catalinb): check that we are in the correct context here
-				logger.error(code);
 				if (!code.equals("413")) {
 					continue;
 				}
 				if (messageIndex == 2) {
-					logger.error("REDIRECT URL: " + parser.getText());
+					logger.debug("REDIRECT URL: " + parser.getText());
 					URL url = new URL(parser.getText());
 					return url;
 				}

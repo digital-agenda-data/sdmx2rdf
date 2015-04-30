@@ -11,8 +11,10 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.sdmxsource.sdmx.api.constants.SDMX_STRUCTURE_TYPE;
 import org.sdmxsource.sdmx.api.constants.TIME_FORMAT;
+import org.sdmxsource.sdmx.api.model.beans.datastructure.DataStructureBean;
 import org.sdmxsource.sdmx.api.model.beans.reference.MaintainableRefBean;
 import org.sdmxsource.sdmx.api.model.beans.reference.StructureReferenceBean;
+import org.sdmxsource.sdmx.api.model.data.Observation;
 import org.sdmxsource.sdmx.util.beans.reference.StructureReferenceBeanImpl;
 import org.springframework.stereotype.Component;
 
@@ -20,6 +22,8 @@ import sdmx2rdf.vocabularies.Cube;
 import sdmx2rdf.vocabularies.Sdmx;
 import sdmx2rdf.vocabularies.Skos;
 
+import com.hp.hpl.jena.rdf.model.AnonId;
+import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.sparql.vocabulary.FOAF;
 import com.hp.hpl.jena.vocabulary.DCTerms;
 import com.hp.hpl.jena.vocabulary.DCTypes;
@@ -83,5 +87,13 @@ public class URIFactory {
 		nsPrefixMap.put("foaf", FOAF.NS);
 		nsPrefixMap.put("estat", "http://ec.europa.eu/eurostat/");
 		nsPrefixMap.put("time", "http://reference.data.gov.uk/doc/");
+	}
+
+	public String getMissingCodeURI(Observation observation, String code) {
+		DataStructureBean dataStructure = observation.getSeriesKey().getDataStructure();
+		String base = getURI(dataStructure.getUrn());
+		base += "/Codelist/Code/" + code;
+		
+		return base;
 	}
 }

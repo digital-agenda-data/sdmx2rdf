@@ -90,12 +90,16 @@ public class ObservationConverter {
 				CodelistBean codelistBean = (CodelistBean) retreivalManager.getMaintainableBean(codelistRef);
 				CodeBean codeBean = codelistBean.getCodeById(keyValue.getCode());
 				
+				Resource codeResource;
 				if (codeBean != null) {
-					Resource codeResource = model.createResource(uriFactory.getURI(codeBean.getUrn()));
-					rdfObs.addProperty(attributeProperty, codeResource);
+					codeResource = model.createResource(uriFactory.getURI(codeBean.getUrn()));
+					
 				} else {
-					logger.error("Invalid code id: " + keyValue.getCode());
+					codeResource = model.createResource(uriFactory.getMissingCodeURI(observation, keyValue.getCode()));
+					logger.warn("Invalid code id: " + keyValue.getCode() + ". Using: " + codeResource.getURI());
+
 				}
+				rdfObs.addProperty(attributeProperty, codeResource);
 			} else {
 				logger.error("unsupported attribute representation");
 			}

@@ -56,8 +56,14 @@ public class Sdmx2Rdf {
 	private Model model;
 
 	private final Log logger = LogFactory.getLog(getClass());
+	
 
-	public void parse(InputStream[] structuresInputStreams, InputStream dataInputStream) {
+	public void parse(InputStream[] inputStreams, InputStream data) {
+		parse(inputStreams, data, null);
+		
+	}
+
+	public void parse(InputStream[] structuresInputStreams, InputStream dataInputStream, MaintainableBean dataflow) {
 		SdmxBeans beans = null;
 
 		for (InputStream structureInputStream : structuresInputStreams) {
@@ -88,6 +94,11 @@ public class Sdmx2Rdf {
 			default:
 				break;
 			}
+		}
+		
+		if (dataflow != null) {
+			Resource resource = converterFactory.convert(dataflow, model);
+			datasetMap.put(dataflow.getId(), resource);
 		}
 
 		// read data
@@ -134,4 +145,5 @@ public class Sdmx2Rdf {
 	public void writeTo(OutputStream out) {
 		model.write(out, "RDF/XML-ABBREV");
 	}
+
 }

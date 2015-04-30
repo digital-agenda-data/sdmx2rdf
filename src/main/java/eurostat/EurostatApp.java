@@ -54,7 +54,7 @@ public class EurostatApp {
         InputStream dataflows = EurostatApp.class.getResourceAsStream("/eurostat_dataflows/latest");
         // TODO: get this from http://www.ec.europa.eu/eurostat/SDMX/diss-web/rest/dataflow/ESTAT/all/latest
         // get all dataflows from main file
-        downloadAllIsoc(dataflows, "isoc_bde15dip", null);
+        downloadAllIsoc(dataflows, "isoc_", null);
     }
 
 	public void downloadAllIsoc(InputStream dataflows, String filter, OutputStream os) throws Exception {
@@ -70,9 +70,9 @@ public class EurostatApp {
 					// replace this with downloadDataset if you want to download only
 					try {
 					    if(os != null){
-						    convertDataset(bean.getId(), os);
+						    convertDataset(bean, os);
                         } else {
-                            convertDataset(bean.getId());
+                            convertDataset(bean);
                         }
 					} catch (MalformedURLException e) {
 						logger.error("Failed to download data:" + e.getMessage());
@@ -88,15 +88,15 @@ public class EurostatApp {
 		datasetFactory.getData(dataset);
 	}
 	
-	public void convertDataset(String dataset) throws Exception {
-        FileOutputStream out = new FileOutputStream(dataset + ".rdf");
-	    convertDataset(dataset, out);
+	public void convertDataset(MaintainableBean dataflow) throws Exception {
+        FileOutputStream out = new FileOutputStream(dataflow.getId() + ".rdf");
+	    convertDataset(dataflow, out);
 		out.close();
 	}
 
-	public void convertDataset(String dataset, OutputStream os) throws Exception {
-        logger.info("Dataset: " + dataset);
-        sdmx2rdf.parse(new InputStream[] { datasetFactory.getDSD(dataset) }, datasetFactory.getData(dataset));
+	public void convertDataset(MaintainableBean dataflow, OutputStream os) throws Exception {
+        logger.info("Dataset: " + dataflow.getId());
+        sdmx2rdf.parse(new InputStream[] { datasetFactory.getDSD(dataflow.getId()) }, datasetFactory.getData(dataflow.getId()), dataflow);
         sdmx2rdf.writeTo(os);
 	}
 }

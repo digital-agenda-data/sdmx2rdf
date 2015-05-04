@@ -44,56 +44,26 @@ public class EurostatApp {
 
 	private final Log logger = LogFactory.getLog(getClass());
 
-	public static void main(String[] args) throws Exception {
-		ApplicationContext ctx = new AnnotationConfigApplicationContext(EurostatAppContextConfiguration.class);
-		EurostatApp app = ctx.getBean(EurostatApp.class);
-		app.downloadAllIsoc();
-	}
-
-    public void downloadAllIsoc() throws Exception {
-        InputStream dataflows = EurostatApp.class.getResourceAsStream("/eurostat_dataflows/latest");
-        // TODO: get this from http://www.ec.europa.eu/eurostat/SDMX/diss-web/rest/dataflow/ESTAT/all/latest
-        // get all dataflows from main file
-        downloadAllIsoc(dataflows, "isoc_", null);
-    }
-
-	public void downloadAllIsoc(InputStream dataflows, String filter, OutputStream os) throws Exception {
+	public boolean fetchAndConvertDataset(InputStream dataflows, String dataset, OutputStream os) throws Exception {
 
 		ReadableDataLocation dataLocation = rdlFactory.getReadableDataLocation(dataflows);
 		StructureWorkspace workspace = structureParsingManager.parseStructures(dataLocation);
 		SdmxBeans beans = workspace.getStructureBeans(true);
+		
 		for (MaintainableBean bean : beans.getAllMaintainables()) {
 			SDMX_STRUCTURE_TYPE beanType = bean.getStructureType();
 			if (bean.getStructureType() == SDMX_STRUCTURE_TYPE.DATAFLOW) {
-				if ( bean.getId().startsWith(filter)) {
+				if ( bean.getId().equals(dataset)) {
 					logger.info(MessageFormat.format("Found {0}, id={1}, name={2}", beanType, bean.getId(), bean.getName()));
-					// replace this with downloadDataset if you want to download only
-					try {
-					    if(os != null){
-						    convertDataset(bean, os);
-                        } else {
-                            convertDataset(bean);
-                        }
-					} catch (MalformedURLException e) {
-						logger.error("Failed to download data:" + e.getMessage());
-					}
+					convertDataset(bean, os);
+					return true;
 				}
 			}
 		}
-	}
-
-	public void downloadDataset(String dataset) throws Exception {
-		// download only
-		datasetFactory.getDSD(dataset);
-		datasetFactory.getData(dataset);
+		
+		return false;
 	}
 	
-	public void convertDataset(MaintainableBean dataflow) throws Exception {
-        FileOutputStream out = new FileOutputStream(dataflow.getId() + ".rdf");
-	    convertDataset(dataflow, out);
-		out.close();
-	}
-
 	public void convertDataset(MaintainableBean dataflow, OutputStream os) throws Exception {
         logger.info("Dataset: " + dataflow.getId());
         sdmx2rdf.parse(new InputStream[] { datasetFactory.getDSD(dataflow.getId()) }, datasetFactory.getData(dataflow.getId()), dataflow);

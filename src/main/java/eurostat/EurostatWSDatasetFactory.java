@@ -34,6 +34,7 @@ import sdmx2rdf.DatasetFactory;
 public class EurostatWSDatasetFactory implements DatasetFactory {
 	
 	String cache_dir = "data";
+	String download_dir ="temp";
 	String dsd_pattern = "http://ec.europa.eu/eurostat/SDMX/diss-web/rest/datastructure/ESTAT/DSD_{0}";
 	// When using WS, some of the data files are not provided synchronously, see TODO below
 	String data_pattern = "http://ec.europa.eu/eurostat/SDMX/diss-web/rest/data/{0}";
@@ -43,37 +44,44 @@ public class EurostatWSDatasetFactory implements DatasetFactory {
 	
 	@Override
 	public InputStream getDSD(String dataset) throws Exception {
-		File file = new File(cache_dir, dataset + "_dsd.xml");
-		if (!file.exists()) {
-			URL source = new URL(MessageFormat.format(dsd_pattern, dataset));
-			FileUtils.copyURLToFile(source, file);
+		File cache_file = new File(cache_dir, dataset + "_dsd.xml");
+		File download_file = new File(download_dir, dataset + "_dsd.xml");
+		
+		if (cache_file.exists()) {
+			return new FileInputStream(cache_file);
 		}
-		return new FileInputStream(file);
+		URL source = new URL(MessageFormat.format(dsd_pattern, dataset));
+		FileUtils.copyURLToFile(source, download_file);
+		FileUtils.moveFile(download_file, cache_file);
+		return new FileInputStream(cache_file);
 	}
 
 	@Override
 	public InputStream getData(String dataset) throws Exception {
-		File file = new File(cache_dir, dataset + "_data.sdmx.xml");
+		File cache_file = new File(cache_dir, dataset + "_data.sdmx.xml");
+		File download_file = new File(download_dir, dataset + "_data.sdmx.xml");
 		
-		if (!file.exists()) {
-			URL source = new URL(MessageFormat.format(data_pattern, dataset));
-
-			FileUtils.copyURLToFile(source, file);
+		if (cache_file.exists()) {
+			return new FileInputStream(cache_file);
 		}
+		
+		URL source = new URL(MessageFormat.format(data_pattern, dataset));
+		FileUtils.copyURLToFile(source, download_file);
 
-		URL redirectURL = getRedirectURL(file);
+		// If the dataset is not available right away, the server will respond
+		// with a url from which the file can be retrieved at a later time.
+		URL redirectURL = getRedirectURL(download_file);
 		
 		if (redirectURL != null) {
-			downloadZIPAfterRedirect(cache_dir, dataset, redirectURL, file);
+			downloadZIPAfterRedirect(dataset, redirectURL, download_file);
 		}
 
-		return new FileInputStream(file);
+		FileUtils.moveFile(download_file, cache_file);
+		return new FileInputStream(cache_file);
 	}
 	
-	protected void downloadZIPAfterRedirect(String cache_dir, String dataset, URL source, File destination) throws Exception {
-		File file = new File(cache_dir, dataset + ".zip");
-		logger.debug(file);
-		logger.debug(source);
+	protected void downloadZIPAfterRedirect(String dataset, URL source, File destination) throws Exception {
+		File file = new File(download_dir, dataset + ".zip");
 		for (int i = 0; i < 60; i++) {
 			try {
 				FileUtils.copyURLToFile(source, file);
@@ -156,10 +164,17 @@ public class EurostatWSDatasetFactory implements DatasetFactory {
 	@PostConstruct
 	public void init() {
 		File cache_dir_file = new File(cache_dir);
+		File download_dir_file = new File(download_dir);
 		if ( !cache_dir_file.exists() ) {
 			boolean created = cache_dir_file.mkdirs();
 			if (!created) {
 				logger.error("Cannot create cache dir: " + cache_dir_file.getAbsolutePath());
+			}
+		}
+		
+		if ( !download_dir_file.exists() ) {
+			if (!download_dir_file.mkdir()) {
+				logger.error("Cannot create cache dir: " + download_dir_file.getAbsolutePath());
 			}
 		}
 	}

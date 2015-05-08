@@ -11,6 +11,8 @@ import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Component;
 import org.springframework.web.HttpRequestHandler;
 
+import eurostat.EurostatApp.Result;
+
 import javax.annotation.PostConstruct;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -32,10 +34,7 @@ public class EurostatServlet implements HttpRequestHandler {
     private ApplicationContext ctx;
 
     private final Log logger = LogFactory.getLog(getClass());
-    
-    private String sdmx_cache_dir = "sdmx_cache";
-    private String sdmx_temp_dir = "sdmx_tmp";
-
+ 
     /**
      * Default request handler, serves a RDF from the EurostatApp stream
      * Default data source is the ESTAT latest, can be changed to the project file with the "?file" parameter
@@ -54,58 +53,38 @@ public class EurostatServlet implements HttpRequestHandler {
         // defaults to URL source; if needed it can be changed to the built-in file using the "?file" request parameter
         Resource resource = null;
 
-        if(req.getParameter("file") != null) {
-            resource = ctx.getResource("classpath:eurostat_dataflows/latest");
-        } else {
-            resource = ctx.getResource("url:http://www.ec.europa.eu/eurostat/SDMX/diss-web/rest/dataflow/ESTAT/all/latest");
-        }
+        boolean forceRefresh = req.getParameter("force_refresh") != null;
+        resource = ctx.getResource("classpath:eurostat_dataflows/latest");
+        //resource = ctx.getResource("url:http://www.ec.europa.eu/eurostat/SDMX/diss-web/rest/dataflow/ESTAT/all/latest");
         
         logger.info("Resource " + resource);
         
-        try {
-            resp.setContentType("application/rdf+xml");
-            resp.setHeader("Content-Disposition","attachment; filename=" + requested + ".rdf");
+
+        resp.setContentType("application/rdf+xml");
+        resp.setHeader("Content-Disposition","attachment; filename=" + requested + ".rdf");
             
-            InputStream is = resource.getInputStream();      
-            boolean found = getDataset(is, requested, resp.getOutputStream());
-            if (!found) {
-            	resp.reset();
-            	resp.sendError(HttpServletResponse.SC_NOT_FOUND, "Dataset not found.");
-            }
+        EurostatApp ea = ctx.getBean(EurostatApp.class);
+        OutputStream outputStream = resp.getOutputStream();
             
-        } catch (MalformedURLException e) {
-        	resp.reset();
-        	resp.sendError(HttpServletResponse.SC_REQUEST_ENTITY_TOO_LARGE, "The requested dataset is too large to download.");
-        } catch (Exception e) {
-            logger.warn(e,e);
+        Result result = ea.fetchAndConvertDataset(resource.getInputStream(), forceRefresh, requested, false, outputStream);
+            
+        if (result == Result.FOUND) {
+        	return;
+        }
+            
+        resp.reset();
+        switch(result) {
+		case DATASET_TOO_LARGE:
+			resp.sendError(HttpServletResponse.SC_REQUEST_ENTITY_TOO_LARGE, "The requested dataset is to large to download.");
+			return;
+		case ERROR:
+			resp.sendError(HttpServletResponse.SC_EXPECTATION_FAILED, "Unexpected error!");
+			return;
+		case NOT_FOUND:
+			resp.sendError(HttpServletResponse.SC_NOT_FOUND, "The requested dataset was not found!");
+			return;
+		default:
+			logger.warn("Invalid result!");
         }
     }
-    
-	private boolean getDataset(InputStream dataflow, String dataset, OutputStream os) throws Exception {
-		File file = new File(sdmx_cache_dir, dataset + ".rdf");
-
-		if (file.exists()) {
-			IOUtils.copy(new FileInputStream(file), os);
-			return true;
-		}
-		
-        FileOutputStream cache = new FileOutputStream(file);
-        TeeOutputStream branchedStream = new TeeOutputStream(cache, os);
-        
-        // invoke the converter
-        EurostatApp ea = ctx.getBean(EurostatApp.class);     
-        return ea.fetchAndConvertDataset(dataflow, dataset, branchedStream);
-	}
-
-	@PostConstruct
-	public void init() {
-		File sdmx_cache_dir_file = new File(sdmx_cache_dir);
-
-		if ( !sdmx_cache_dir_file.exists() ) {
-			boolean created = sdmx_cache_dir_file.mkdirs();
-			if (!created) {
-				logger.error("Cannot create cache dir: " + sdmx_cache_dir_file.getAbsolutePath());
-			}
-		}
-	}
 }

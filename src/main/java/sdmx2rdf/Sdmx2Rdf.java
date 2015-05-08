@@ -135,7 +135,7 @@ public class Sdmx2Rdf {
 	}
 
 	@PostConstruct
-	private void initModel() {
+	public void initModel() {
 		model = ModelFactory.createDefaultModel();
 		for (Entry<String, String> entry : uriFactory.getNSMap().entrySet()) {
 			model.setNsPrefix(entry.getKey(), entry.getValue());
@@ -145,5 +145,4 @@ public class Sdmx2Rdf {
 	public void writeTo(OutputStream out) {
 		model.write(out, "RDF/XML-ABBREV");
 	}
-
 }

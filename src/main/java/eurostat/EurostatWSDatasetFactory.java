@@ -55,7 +55,7 @@ public class EurostatWSDatasetFactory implements DatasetFactory {
 		FileUtils.moveFile(download_file, cache_file);
 		return new FileInputStream(cache_file);
 	}
-
+	
 	@Override
 	public InputStream getData(String dataset) throws Exception {
 		File cache_file = new File(cache_dir, dataset + "_data.sdmx.xml");
@@ -79,6 +79,8 @@ public class EurostatWSDatasetFactory implements DatasetFactory {
 		FileUtils.moveFile(download_file, cache_file);
 		return new FileInputStream(cache_file);
 	}
+	
+	
 	
 	protected void downloadZIPAfterRedirect(String dataset, URL source, File destination) throws Exception {
 		File file = new File(download_dir, dataset + ".zip");

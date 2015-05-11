@@ -9,4 +9,6 @@ To run the servlet with the built-in Jetty:
 
 mvn jetty:run
 
-http://localhost:8080/sdmx2rdf/isoc_bde15dip
+http://localhost:8080/sdmx2rdf/isoc_bde15dip?force_refresh=true
+
+The servlet will cache converted documents, to force a refresh use force_refresh.

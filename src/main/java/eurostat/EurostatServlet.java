@@ -67,7 +67,7 @@ public class EurostatServlet implements HttpRequestHandler {
         EurostatApp ea = ctx.getBean(EurostatApp.class);
         OutputStream outputStream = resp.getOutputStream();
             
-        Result result = ea.fetchAndConvertDataset(resource.getInputStream(), forceRefresh, requested, ignoreCache, outputStream);
+        Result result = ea.fetchAndConvertDataset(resource.getInputStream(), forceRefresh, requested, forceRefresh, outputStream);
             
         if (result == Result.FOUND) {
         	return;

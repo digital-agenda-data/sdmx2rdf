@@ -54,6 +54,7 @@ public class EurostatServlet implements HttpRequestHandler {
         Resource resource = null;
 
         boolean forceRefresh = req.getParameter("force_refresh") != null;
+        boolean ignoreCache = req.getParameter("ignore_cache") != null; 
         resource = ctx.getResource("classpath:eurostat_dataflows/latest");
         //resource = ctx.getResource("url:http://www.ec.europa.eu/eurostat/SDMX/diss-web/rest/dataflow/ESTAT/all/latest");
         
@@ -66,7 +67,7 @@ public class EurostatServlet implements HttpRequestHandler {
         EurostatApp ea = ctx.getBean(EurostatApp.class);
         OutputStream outputStream = resp.getOutputStream();
             
-        Result result = ea.fetchAndConvertDataset(resource.getInputStream(), forceRefresh, requested, false, outputStream);
+        Result result = ea.fetchAndConvertDataset(resource.getInputStream(), forceRefresh, requested, ignoreCache, outputStream);
             
         if (result == Result.FOUND) {
         	return;

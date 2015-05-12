@@ -97,6 +97,7 @@ public class EurostatApp {
 	        sdmx2rdf.parse(new InputStream[] { datasetFactory.getDSD(targetDataflow.getId()) },
 	        			   datasetFactory.getData(targetDataflow.getId()),
 	        			   targetDataflow);
+	        sdmx2rdf.validate();
 	        sdmx2rdf.writeTo(os);
 
 		} catch (MalformedURLException e) {

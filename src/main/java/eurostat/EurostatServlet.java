@@ -54,7 +54,6 @@ public class EurostatServlet implements HttpRequestHandler {
         Resource resource = null;
 
         boolean forceRefresh = req.getParameter("force_refresh") != null;
-        boolean ignoreCache = req.getParameter("ignore_cache") != null; 
         resource = ctx.getResource("classpath:eurostat_dataflows/latest");
         //resource = ctx.getResource("url:http://www.ec.europa.eu/eurostat/SDMX/diss-web/rest/dataflow/ESTAT/all/latest");
         

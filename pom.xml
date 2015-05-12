@@ -106,7 +106,13 @@
 	</repositories>
 
 	<dependencies>
-
+		<dependency>
+    		<groupId>validator</groupId>
+    		<artifactId>nospa-validator</artifactId>
+    		<version>0.9.9</version>
+    		<scope>system</scope>
+    		<systemPath>${basedir}/lib/nospa-rdf-data-cube-validator-0.9.9.jar</systemPath>
+  		</dependency>
 		<!-- ASPECTS (@CONFIGURABLE CLASSES) -->
 		<dependency>
 			<groupId>org.aspectj</groupId>

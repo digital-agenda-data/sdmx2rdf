@@ -30,6 +30,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import sdmx2rdf.converter.ConverterFactory;
+import cn.yyz.nospa.validator.Validator;
+import cn.yyz.nospa.validator.ValidatorFactory;
 
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
@@ -144,5 +146,11 @@ public class Sdmx2Rdf {
 
 	public void writeTo(OutputStream out) {
 		model.write(out, "RDF/XML-ABBREV");
+	}
+
+	public void validate() {
+		Validator validator = ValidatorFactory.createValidator("NOSPA", this.model);
+		validator.normalize();
+		validator.validateAll();
 	}
 }

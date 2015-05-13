@@ -34,9 +34,9 @@ public class DataflowConverter extends AbstractConverter<DataflowBean> {
 			dataset.addProperty(RDFS.label, name.getValue(), name.getLocale());
 			dataset.addProperty(DCTerms.title, name.getValue(), name.getLocale());
 		}
-		dataset.addProperty(Cube.structure, uriFactory.getURI(bean.getDataStructureRef().getTargetUrn()));
+		Resource dsd = model.createResource(uriFactory.getURI(bean.getDataStructureRef().getTargetUrn()));
+		dataset.addProperty(Cube.structure, dsd);
 		// TODO: other info from header
-
 		return dataset;
 	}
 }

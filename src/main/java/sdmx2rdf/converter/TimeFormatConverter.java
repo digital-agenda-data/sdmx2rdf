@@ -86,32 +86,32 @@ public class TimeFormatConverter {
 		String baseURI;
 		switch(getTimeFormatOfDate(value)) {
 		case GREGORIAN_YEAR:
-			baseURI = "http://reference.data.gov.uk/id/year/";
+			baseURI = "http://reference.data.gov.uk/id/gregorian-year/";
 			break;
 		case GREGORIAN_MONTH:
-			baseURI = "http://reference.data.gov.uk/id/month/";
+			baseURI = "http://reference.data.gov.uk/id/gregorian-month/";
 			break;
 		case GREGORIAN_DAY:
-			baseURI = "http://reference.data.gov.uk/id/day/";
+			baseURI = "http://reference.data.gov.uk/id/gregorian-day/";
 			break;
 		case DATE_TIME:
-			baseURI = "http://reference.data.gov.uk/id/second/";
+			baseURI = "http://reference.data.gov.uk/id/gregorian-second/";
 			break;
 		case REPORTING_SEMSTER:
 			parts = value.split("-S");
 			value = parts[0] + "-H" + parts[1];
-			baseURI = "http://reference.data.gov.uk/id/half/";
+			baseURI = "http://reference.data.gov.uk/id/gregorian-half/";
 			
 			break;
 		case REPORTING_QUARTER:
 			baseURI = "http://reference.data.gov.uk/id/quarter/";
 			break;
 		case REPORTING_YEAR:
-			baseURI = "http://reference.data.gov.uk/id/year/";
+			baseURI = "http://reference.data.gov.uk/id/gregorian-year/";
 			value = value.split("-A")[0];
 			break;
 		case REPORTING_MONTH:
-			baseURI = "http://reference.data.gov.uk/id/month/";
+			baseURI = "http://reference.data.gov.uk/id/gregorian-month/";
 			parts = value.split("-M");
 			value = parts[0] + "-" + parts[1];
 			break;

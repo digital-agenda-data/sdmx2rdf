@@ -64,6 +64,8 @@ public class Sdmx2Rdf {
 		parse(inputStreams, data, null);
 		
 	}
+	
+	static int observationCounter;
 
 	public void parse(InputStream[] structuresInputStreams, InputStream dataInputStream, MaintainableBean dataflow) {
 		SdmxBeans beans = null;
@@ -130,6 +132,9 @@ public class Sdmx2Rdf {
 						// String dimensionAtObservation =
 						// dre.getCurrentDatasetHeaderBean().getDataStructureReference().getDimensionAtObservation();
 						converterFactory.getObservationConverter().convert(datasetRdf, obs, model, retreivalManager);
+						if (++observationCounter % 10000 == 0) {
+							logger.info("Converting observations..");
+						}
 					}
 				}
 			}

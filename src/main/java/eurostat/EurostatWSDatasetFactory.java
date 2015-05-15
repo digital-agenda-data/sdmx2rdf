@@ -89,7 +89,7 @@ public class EurostatWSDatasetFactory implements DatasetFactory {
 				FileUtils.copyURLToFile(source, file);
 				break;
 			} catch (FileNotFoundException e) {
-				logger.warn("Failed to download. Retrying..");
+				logger.info("Failed to download. Retrying..");
 				Thread.sleep(1000);
 			}
 		}

@@ -1,8 +1,13 @@
 package eurostat;
 
 
-import org.apache.commons.io.IOUtils;
-import org.apache.commons.io.output.TeeOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,20 +17,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.HttpRequestHandler;
 
 import eurostat.EurostatApp.Result;
-
-import javax.annotation.PostConstruct;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.MalformedURLException;
 
 @Component("eurostatServlet")
 public class EurostatServlet implements HttpRequestHandler {
@@ -66,7 +57,7 @@ public class EurostatServlet implements HttpRequestHandler {
         EurostatApp ea = ctx.getBean(EurostatApp.class);
         OutputStream outputStream = resp.getOutputStream();
             
-        Result result = ea.fetchAndConvertDataset(resource.getInputStream(), forceRefresh, requested, forceRefresh, outputStream);
+        Result result = ea.fetchAndConvertDataset(resource.getInputStream(), requested, forceRefresh, outputStream);
             
         if (result == Result.FOUND) {
         	return;

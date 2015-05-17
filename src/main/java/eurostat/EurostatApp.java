@@ -8,9 +8,7 @@ import java.io.OutputStream;
 import java.net.MalformedURLException;
 import java.text.MessageFormat;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
 
 import javax.annotation.PostConstruct;
 
@@ -25,8 +23,6 @@ import org.sdmxsource.sdmx.api.model.beans.SdmxBeans;
 import org.sdmxsource.sdmx.api.model.beans.base.MaintainableBean;
 import org.sdmxsource.sdmx.api.util.ReadableDataLocation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
@@ -62,7 +58,7 @@ public class EurostatApp {
 	private Map<String, MaintainableBean> knownDatasets = new HashMap<String, MaintainableBean>();
 	private String cache_dir = "sdmx_cache";
 
-	public Result fetchAndConvertDataset(InputStream dataflows, boolean forceRefresh, String dataset, boolean ignoreCache, OutputStream os) {
+	public Result fetchAndConvertDataset(InputStream dataflows, String dataset, boolean forceRefresh, OutputStream os) {
 		
 		if (forceRefresh || knownDatasets.isEmpty()) {
 			logger.info("Repopulating dataset map!");
@@ -87,7 +83,7 @@ public class EurostatApp {
 			return Result.NOT_FOUND;
 		}
 		
-		if (!ignoreCache && getCachedDataset(dataset, os)) {
+		if (!forceRefresh && getCachedDataset(dataset, os)) {
 			return Result.FOUND;
 		}
 		

@@ -1,19 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
 <log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
-    <appender class="org.apache.log4j.ConsoleAppender" name="stdout">
-        <layout class="org.apache.log4j.PatternLayout">
-            <param value="%d %p [%c] - &lt;%m&gt;%n" name="ConversionPattern"/>
-        </layout>
-    </appender>
-    <logger name="sdmx.converter">
-        <level value="debug"/>
-    </logger>
-    <logger name="sdmx2rdf">
-        <level value="debug"/>
-    </logger>
-    <root>
-        <level value="info"/>
-        <appender-ref ref="stdout"/>
-    </root>
+	<appender class="org.apache.log4j.ConsoleAppender" name="stdout">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param value="%d %p [%c] - &lt;%m&gt;%n" name="ConversionPattern" />
+		</layout>
+	</appender>
+	<appender name="logfile" class="org.apache.log4j.FileAppender">
+		<param name="file" value="sdmx2rdf.log" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %p - %m%n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="levelMin" value="DEBUG" />
+		</filter>
+	</appender>
+	<logger name="sdmx.converter">
+		<level value="debug" />
+	</logger>
+	<logger name="sdmx2rdf">
+		<level value="debug" />
+	</logger>
+	<root>
+		<level value="info" />
+		<appender-ref ref="stdout" />
+		<appender-ref ref="logfile" />
+	</root>
 </log4j:configuration>

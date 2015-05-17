@@ -103,6 +103,7 @@ public class EurostatApp {
 		} catch (MalformedURLException e) {
 			return Result.DATASET_TOO_LARGE;
 		} catch (Exception e) {
+			logger.error(e, e);
 			return Result.ERROR;
 		}
 		

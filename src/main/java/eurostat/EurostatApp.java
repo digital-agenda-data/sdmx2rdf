@@ -16,6 +16,7 @@ import org.apache.commons.io.IOUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.sdmxsource.sdmx.api.constants.SDMX_STRUCTURE_TYPE;
+import org.sdmxsource.sdmx.api.exception.SdmxSyntaxException;
 import org.sdmxsource.sdmx.api.factory.ReadableDataLocationFactory;
 import org.sdmxsource.sdmx.api.manager.parse.StructureParsingManager;
 import org.sdmxsource.sdmx.api.model.StructureWorkspace;
@@ -24,6 +25,7 @@ import org.sdmxsource.sdmx.api.model.beans.base.MaintainableBean;
 import org.sdmxsource.sdmx.api.util.ReadableDataLocation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.util.StringUtils;
 import org.springframework.web.client.RestTemplate;
 
 import sdmx2rdf.DatasetFactory;
@@ -98,8 +100,24 @@ public class EurostatApp {
 
 		} catch (MalformedURLException e) {
 			return Result.DATASET_TOO_LARGE;
+		} catch (SdmxSyntaxException syntaxException) {
+			// sdmx parser. Check if we have a footer
+			try {
+				EurostatErrorParser errorParser = new EurostatErrorParser(datasetFactory.getData(targetDataflow.getId()));
+				errorParser.parse();
+				logger.warn(MessageFormat.format("Code={0}. Severity={1}. Description={2}",
+						errorParser.getCode(), errorParser.getSeverity(), errorParser.getCodeDescription()));
+				for (String text : errorParser.getText()) {
+					logger.warn(text);
+				}
+				
+				return Result.ERROR;
+			} catch (Exception e) {
+				logger.warn(e, e);
+				return Result.ERROR;
+			}
 		} catch (Exception e) {
-			logger.error(e, e);
+			logger.warn(e, e);
 			return Result.ERROR;
 		}
 		

@@ -92,8 +92,7 @@ public class URIFactory {
 	public String getMissingCodeURI(Observation observation, String code) {
 		DataStructureBean dataStructure = observation.getSeriesKey().getDataStructure();
 		String base = getURI(dataStructure.getUrn());
-		base += "/Codelist/Code/" + code;
-		
+		base += "qb/Codelist/UNKNOWN_CL/1.0/Code/" + code;
 		return base;
 	}
 }

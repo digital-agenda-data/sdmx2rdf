@@ -11,6 +11,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.MessageFormat;
 import java.util.Enumeration;
+import java.util.Random;
 import java.util.Stack;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
@@ -43,27 +44,35 @@ public class EurostatWSDatasetFactory implements DatasetFactory {
 	
 	
 	@Override
-	public InputStream getDSD(String dataset) throws Exception {
-		File cache_file = new File(cache_dir, dataset + "_dsd.xml");
-		File download_file = new File(download_dir, dataset + "_dsd.xml");
+	public InputStream getDSD(String dataset, boolean forceRefresh) throws Exception {
 		
-		if (cache_file.exists()) {
+		File cache_file = new File(cache_dir, dataset + "_dsd.xml");
+		
+		if (cache_file.exists() && !forceRefresh) {
 			return new FileInputStream(cache_file);
 		}
+		
+		
+		Random random = new Random();
+		File download_file = new File(download_dir, dataset + random.nextLong() + "_dsd.xml");
+		
 		URL source = new URL(MessageFormat.format(dsd_pattern, dataset));
 		FileUtils.copyURLToFile(source, download_file);
+		FileUtils.deleteQuietly(cache_file);
 		FileUtils.moveFile(download_file, cache_file);
 		return new FileInputStream(cache_file);
 	}
 	
 	@Override
-	public InputStream getData(String dataset) throws Exception {
+	public InputStream getData(String dataset, boolean forceRefresh) throws Exception {
 		File cache_file = new File(cache_dir, dataset + "_data.sdmx.xml");
-		File download_file = new File(download_dir, dataset + "_data.sdmx.xml");
-		
-		if (cache_file.exists()) {
+	
+		if (cache_file.exists() && !forceRefresh) {
 			return new FileInputStream(cache_file);
 		}
+		
+		Random random = new Random();
+		File download_file = new File(download_dir, dataset + random.nextLong() + "_data.sdmx.xml");
 		
 		URL source = new URL(MessageFormat.format(data_pattern, dataset));
 		FileUtils.copyURLToFile(source, download_file);
@@ -76,6 +85,7 @@ public class EurostatWSDatasetFactory implements DatasetFactory {
 			downloadZIPAfterRedirect(dataset, redirectURL, download_file);
 		}
 
+		FileUtils.deleteQuietly(cache_file);
 		FileUtils.moveFile(download_file, cache_file);
 		return new FileInputStream(cache_file);
 	}
@@ -90,7 +100,7 @@ public class EurostatWSDatasetFactory implements DatasetFactory {
 				break;
 			} catch (FileNotFoundException e) {
 				logger.info("Failed to download. Retrying..");
-				Thread.sleep(1000);
+				Thread.sleep(5000);
 			}
 		}
 		

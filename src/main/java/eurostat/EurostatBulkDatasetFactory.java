@@ -31,7 +31,7 @@ public class EurostatBulkDatasetFactory implements DatasetFactory {
 	private final Log logger = LogFactory.getLog(getClass());
 
 	@Override
-	public InputStream getDSD(String dataset) throws IOException {
+	public InputStream getDSD(String dataset, boolean forceRefresh) throws IOException {
 		File file = new File(cache_dir, dataset + ".dsd.xml");
 		if (!file.exists()) {
 			downloadDataset(dataset);
@@ -40,7 +40,7 @@ public class EurostatBulkDatasetFactory implements DatasetFactory {
 	}
 
 	@Override
-	public InputStream getData(String dataset) throws IOException {
+	public InputStream getData(String dataset, boolean forceRefresh) throws IOException {
 		File file = new File(cache_dir, dataset + ".sdmx.xml");
 		if (!file.exists()) {
 			downloadDataset(dataset);

@@ -7,6 +7,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.MalformedURLException;
 import java.text.MessageFormat;
+import java.util.ConcurrentModificationException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -92,19 +93,23 @@ public class EurostatApp {
 		try {
 			logger.info("Dataset: " + targetDataflow.getId());
 			sdmx2rdf.initModel();
-	        sdmx2rdf.parse(new InputStream[] { datasetFactory.getDSD(targetDataflow.getId()) },
-	        			   datasetFactory.getData(targetDataflow.getId()),
+	        sdmx2rdf.parse(new InputStream[] { datasetFactory.getDSD(targetDataflow.getId(), forceRefresh) },
+	        			   datasetFactory.getData(targetDataflow.getId(), forceRefresh),
 	        			   targetDataflow);
 	        sdmx2rdf.validate();
 	        sdmx2rdf.writeTo(os);
-
+		} catch (ConcurrentModificationException e) {
+			// this can happen when downloading the same file multiple times because we have only one
+			// instance of sdmx2rdf converter.
+			logger.warn(e, e);
+			return Result.ERROR;
 		} catch (MalformedURLException e) {
 			logger.warn(e, e);
 			return Result.DATASET_TOO_LARGE;
 		} catch (SdmxSyntaxException syntaxException) {
 			// sdmx parser. Check if we have a footer
 			try {
-				EurostatErrorParser errorParser = new EurostatErrorParser(datasetFactory.getData(targetDataflow.getId()));
+				EurostatErrorParser errorParser = new EurostatErrorParser(datasetFactory.getData(targetDataflow.getId(), forceRefresh));
 				errorParser.parse();
 				logger.warn(MessageFormat.format("Code={0}. Severity={1}. Description={2}",
 						errorParser.getCode(), errorParser.getSeverity(), errorParser.getCodeDescription()));

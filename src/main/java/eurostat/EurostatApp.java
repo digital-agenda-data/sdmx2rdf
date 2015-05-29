@@ -99,6 +99,7 @@ public class EurostatApp {
 	        sdmx2rdf.writeTo(os);
 
 		} catch (MalformedURLException e) {
+			logger.warn(e, e);
 			return Result.DATASET_TOO_LARGE;
 		} catch (SdmxSyntaxException syntaxException) {
 			// sdmx parser. Check if we have a footer
